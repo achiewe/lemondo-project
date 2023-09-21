@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 28px 20px;
   align-items: center;
   background-color: $ContainerColor;
 
@@ -12,7 +13,19 @@
     display: flex;
     flex-direction: row;
     gap: 14px;
-    align-items: center;
-    font-family: "TKTRegular";
+    align-items: flex-start;
+
+    .burgerMenuImg {
+      width: 16px;
+      height: 14px;
+    }
+  }
+
+  .userActions {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    align-items: flex-start;
+    height: 21px;
   }
 }

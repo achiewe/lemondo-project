@@ -1,10 +1,13 @@
+"use client";
 import styles from "./page.module.scss";
 import Header from "./components/Header/Header";
+import BurgerMenu from "./components/Burger-menu/BurgerMenu";
 
 export default function Home() {
   return (
-    <main>
+    <main className={styles.MainPage}>
       <Header />
+      <BurgerMenu />
     </main>
   );
 }
