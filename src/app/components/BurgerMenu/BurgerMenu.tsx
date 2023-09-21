@@ -1,15 +1,15 @@
 import styles from "./BurgerMenu.module.scss";
 import Navbar from "../NavBar/Navbar";
+import { useDispatch, useSelector } from "react-redux";
+import { Rootstate } from "@/features/store";
+import { setOpenBurger } from "@/features/OpenBurgerSilce";
 
-interface BurgerProps {
-  setOpennBurger(openBurger: boolean): void;
-  openBurger: boolean;
-}
+const BurgerMenu = (): JSX.Element => {
+  const openBurger = useSelector(
+    (store: Rootstate) => store.openBurger.openBurger
+  );
+  const dispatch = useDispatch();
 
-const BurgerMenu = ({
-  setOpennBurger,
-  openBurger,
-}: BurgerProps): JSX.Element => {
   return (
     <div
       className={styles.BrugerContainer}
@@ -19,7 +19,7 @@ const BurgerMenu = ({
     >
       <svg
         onClick={() => {
-          setOpennBurger(false);
+          dispatch(setOpenBurger());
         }}
         fill="#000000"
         width="40px"

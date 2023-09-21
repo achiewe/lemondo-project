@@ -5,18 +5,17 @@ import notificationSvg from "../../../../public/assets/Fill 1172.svg";
 import basketSvg from "../../../../public/assets/Fill 932-1.svg";
 import accountSvg from "../../../../public/assets/Fill 943.svg";
 import Image from "next/image";
+import { setOpenBurger } from "@/features/OpenBurgerSilce";
+import { useDispatch } from "react-redux";
 
-interface HeaderProps {
-  setOpennBurger(burger: boolean): void;
-}
-
-const Header = ({ setOpennBurger }: HeaderProps): JSX.Element => {
+const Header = (): JSX.Element => {
+  const dispatch = useDispatch();
   return (
     <header className={styles.header}>
       <div className={styles.siteContentdiv}>
         <Image
           onClick={() => {
-            setOpennBurger(true);
+            dispatch(setOpenBurger());
           }}
           src={burgerMenuSvg}
           alt="burger-menu img"
