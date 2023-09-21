@@ -6,7 +6,9 @@
   position: absolute;
   background-color: $InputBorderColor;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 25px 20px;
   flex-direction: column;
+  gap: 30px;
 }
