@@ -6,5 +6,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: red;
+  background-color: $ContainerColor;
+
+  .siteContentdiv {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    align-items: center;
+    font-family: "TKTRegular";
+  }
 }
