@@ -3,7 +3,7 @@ import styles from "./Advertisment.module.scss";
 const Advertisment = (): JSX.Element => {
   return (
     <div className={styles.mainAdvetisment}>
-      <p>გაყიდე და იყიდე დომენი მარტივად </p>
+      <p className={styles.advertismentP}>გაყიდე და იყიდე დომენი მარტივად </p>
     </div>
   );
 };

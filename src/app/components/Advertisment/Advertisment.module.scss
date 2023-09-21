@@ -8,9 +8,20 @@
   background-image: url("../../../../public/assets/shutterstock_1040057017.png");
   background-repeat: no-repeat;
   background-size: 100% 120px;
+  background-color: rgba(0, 0, 0, 0.9);
   height: 120px;
+  aspect-ratio: 3.125/1;
 
   .advertismentP {
-    width: 174px;
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 28px;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "TKT";
+    letter-spacing: 0px;
+    color: $ContainerColor;
+    opacity: 1;
   }
 }
