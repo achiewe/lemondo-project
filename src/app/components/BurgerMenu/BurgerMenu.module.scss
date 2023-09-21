@@ -5,4 +5,8 @@
   min-height: 100%;
   position: absolute;
   background-color: $InputBorderColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
