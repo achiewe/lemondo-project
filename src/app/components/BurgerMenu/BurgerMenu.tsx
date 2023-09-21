@@ -13,7 +13,9 @@ const BurgerMenu = ({
   return (
     <div
       className={styles.BrugerContainer}
-      style={{ display: openBurger ? "flex" : "none" }}
+      style={{
+        display: openBurger ? "flex" : "none",
+      }}
     >
       <svg
         onClick={() => {
