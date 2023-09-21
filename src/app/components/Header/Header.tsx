@@ -6,11 +6,18 @@ import basketSvg from "../../../../public/assets/Fill 932-1.svg";
 import accountSvg from "../../../../public/assets/Fill 943.svg";
 import Image from "next/image";
 
-const Header = (): JSX.Element => {
+interface HeaderProps {
+  setOpennBurger(burger: boolean): void;
+}
+
+const Header = ({ setOpennBurger }: HeaderProps): JSX.Element => {
   return (
     <header className={styles.header}>
       <div className={styles.siteContentdiv}>
         <Image
+          onClick={() => {
+            setOpennBurger(true);
+          }}
           src={burgerMenuSvg}
           alt="burger-menu img"
           className={styles.burgerMenuImg}

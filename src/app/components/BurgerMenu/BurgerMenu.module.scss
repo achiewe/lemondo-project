@@ -1,11 +1,11 @@
 @import "../../colors.scss";
 
 .BrugerContainer {
+  display: none;
   width: 60%;
   min-height: 100%;
   position: absolute;
   background-color: $InputBorderColor;
-  display: flex;
   justify-content: flex-start;
   align-items: flex-end;
   padding: 25px 20px;

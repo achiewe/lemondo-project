@@ -1,10 +1,24 @@
 import styles from "./BurgerMenu.module.scss";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../NavBar/Navbar";
 
-const BurgerMenu = (): JSX.Element => {
+interface BurgerProps {
+  setOpennBurger(openBurger: boolean): void;
+  openBurger: boolean;
+}
+
+const BurgerMenu = ({
+  setOpennBurger,
+  openBurger,
+}: BurgerProps): JSX.Element => {
   return (
-    <div className={styles.BrugerContainer}>
+    <div
+      className={styles.BrugerContainer}
+      style={{ display: openBurger ? "flex" : "none" }}
+    >
       <svg
+        onClick={() => {
+          setOpennBurger(false);
+        }}
         fill="#000000"
         width="40px"
         height="30px"
