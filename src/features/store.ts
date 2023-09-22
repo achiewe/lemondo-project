@@ -15,7 +15,7 @@ const store = configureStore({
 export type Rootstate = {
   openBurger: BurgerProps;
   info: InfoProps;
-  OpenFilter: FilterProps;
+  openFilter: FilterProps;
 };
 
 export default store;

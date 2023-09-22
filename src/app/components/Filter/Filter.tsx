@@ -1,14 +1,31 @@
 import styles from "./filter.module.scss";
 import closeSvg from "../../../../public/assets/Btn_close.svg";
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { Rootstate } from "@/features/store";
+import { setOpenFilter } from "@/features/OpenFilterSlice";
 
 const Filter = (): JSX.Element => {
+  const openFilter = useSelector(
+    (store: Rootstate) => store.openFilter.openFilter
+  );
+
+  const dispatch = useDispatch();
   return (
-    <div className={styles.filterMain}>
+    <div
+      className={styles.filterMain}
+      style={{ display: openFilter ? "flex" : "none" }}
+    >
       <div className={styles.FilterTopMain}>
         <div className={styles.titleFilterDiv}>
           <h3 className={styles.titleFilter}> ფილტრი</h3>
-          <Image src={closeSvg} alt="close img" />
+          <Image
+            src={closeSvg}
+            alt="close img"
+            onClick={() => {
+              dispatch(setOpenFilter());
+            }}
+          />
         </div>
 
         <div className={styles.inputDiv}>
