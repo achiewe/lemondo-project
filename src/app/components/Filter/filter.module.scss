@@ -187,6 +187,202 @@
           }
         }
       }
+
+      .priceDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+
+        .titleInputDiv {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 28px;
+
+          .titleP {
+            text-align: left;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: bold;
+            font-size: 16px;
+            font-family: "TKTRegular";
+            letter-spacing: 0.5px;
+            color: #171d25;
+            opacity: 1;
+          }
+
+          .priceInputDiv {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: center;
+
+            .inputSymbols {
+              width: 100%;
+              border: 1px solid $DarkWhite;
+              border-radius: 10px;
+              opacity: 1;
+              padding-left: 15px;
+
+              .SymbolsFirstInp {
+                width: 115px;
+                height: 44px;
+                border: none;
+                outline: none;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 40px;
+                font-family: "TKTRegular";
+              }
+            }
+
+            .priceInputDivsec {
+              width: 100%;
+              border: 1px solid $DarkWhite;
+              border-radius: 10px;
+              opacity: 1;
+              padding-left: 15px;
+
+              .SymbolsSecInp {
+                width: 115px;
+                height: 44px;
+                border: none;
+                outline: none;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 40px;
+                font-family: "TKTRegular";
+              }
+            }
+          }
+
+          //   //   .rangeDiv {
+          //   //     width: 330px;
+          //   //     height: 0px;
+          //   //     border: 2px solid #e5e5ed;
+          //   //     opacity: 1;
+          // }
+
+          .slider2 {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 0px;
+            background: #d3d3d3;
+            border: 2px solid #e5e5ed;
+            opacity: 1;
+            outline: none;
+            -webkit-transition: 0.2s;
+            transition: opacity 0.2s;
+          }
+
+          .slider2::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border: 2px solid #99cc66;
+            background-color: #ffff;
+            border-radius: 13px;
+            opacity: 1;
+            cursor: pointer;
+          }
+
+          .slider2::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #04aa6d;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .divCategory {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 21px;
+
+    .categoryP {
+      text-align: left;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: "TKTRegular";
+      letter-spacing: 0.5px;
+      color: $DarkBlue;
+      opacity: 1;
+    }
+
+    .categoryListDiv {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      .checkboxDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+
+        .inputCheckbox {
+          width: 20px;
+          height: 20px;
+          border-radius: 6px;
+          opacity: 1;
+          border: 1px solid #e5e5ed;
+        }
+
+        .categoryTitles {
+          text-align: left;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 40px;
+          font-family: "TKTRegular";
+          letter-spacing: 0px;
+          color: $DarkBlue;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .buttonDiv {
+    width: 100%;
+    padding: 18px 20px;
+    background-color: $White;
+    box-shadow: 0px -3px 6px #00000014;
+    opacity: 1;
+
+    .submitButton {
+      width: 335px;
+      height: 50px;
+      background-color: $MistyBlue;
+      border-radius: 10px;
+      opacity: 1;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: "TKTRegular";
+      letter-spacing: 0px;
+      color: $White;
     }
   }
 }
