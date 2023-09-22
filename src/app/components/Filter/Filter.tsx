@@ -33,14 +33,23 @@ const Filter = (): JSX.Element => {
                   />
                 </div>
 
-                <div className={styles.inputOverlay}>
+                <div className={styles.secondInputOverlay}>
                   <input
-                    className={styles.firstInput}
+                    className={styles.secondInput}
                     type="number"
                     value={0}
                   />
                 </div>
               </div>
+
+              {/* <div className={styles.rangeDiv}> */}
+              <input
+                className={styles.slider}
+                type="range"
+                min="0"
+                // max="2"
+              ></input>
+              {/* </div> */}
             </div>
           </div>
         </div>

@@ -78,7 +78,7 @@
           width: 100%;
           display: flex;
           flex-direction: column;
-          gap: 15px;
+          gap: 28px;
 
           .titleP {
             text-align: left;
@@ -86,7 +86,6 @@
             font-variant: normal;
             font-weight: bold;
             font-size: 16px;
-            line-height: 40px;
             font-family: "TKTRegular";
             letter-spacing: 0.5px;
             color: #171d25;
@@ -111,12 +110,80 @@
               background-position: right 15px top 15px;
 
               .firstInput {
-                width: 120px;
+                width: 115px;
                 height: 44px;
                 border: none;
                 outline: none;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 40px;
+                font-family: "TKTRegular";
               }
             }
+
+            .secondInputOverlay {
+              width: 100%;
+              border: 1px solid $DarkWhite;
+              border-radius: 10px;
+              opacity: 1;
+              padding-left: 15px;
+              background-image: url("../../../../public//assets/lari-input.svg");
+              background-repeat: no-repeat;
+              background-position: right 15px top 15px;
+
+              .secondInput {
+                width: 115px;
+                height: 44px;
+                border: none;
+                outline: none;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 40px;
+                font-family: "TKTRegular";
+              }
+            }
+          }
+
+          //   //   .rangeDiv {
+          //   //     width: 330px;
+          //   //     height: 0px;
+          //   //     border: 2px solid #e5e5ed;
+          //   //     opacity: 1;
+          // }
+
+          .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 0px;
+            background: #d3d3d3;
+            border: 2px solid #e5e5ed;
+            opacity: 1;
+            outline: none;
+            -webkit-transition: 0.2s;
+            transition: opacity 0.2s;
+          }
+
+          .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border: 2px solid #99cc66;
+            background-color: #ffff;
+            border-radius: 13px;
+            opacity: 1;
+            cursor: pointer;
+          }
+
+          .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #04aa6d;
+            cursor: pointer;
           }
         }
       }
