@@ -11,6 +11,6 @@
   flex-direction: column;
   gap: 30px;
   overflow-x: hidden;
-  background: #0000004d 0% 0% no-repeat padding-box;
+  z-index: 1;
   transition: 0.6s;
 }

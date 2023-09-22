@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import BurgerMenu from "./components/BurgerMenu/BurgerMenu";
 import { useState } from "react";
 import Advertisment from "./components/Advertisment/Advertisment";
+import Sorting from "./components/Sorting/Sorting";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <BurgerMenu />
       <Advertisment />
+      <Sorting />
     </main>
   );
 }

@@ -16,6 +16,7 @@ const BurgerMenu = (): JSX.Element => {
       style={{
         left: openBurger ? "0" : "-100%",
         position: openBurger ? "absolute" : "fixed",
+        gap: "0",
       }}
     >
       <svg
