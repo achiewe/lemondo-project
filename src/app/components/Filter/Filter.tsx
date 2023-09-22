@@ -23,8 +23,23 @@ const Filter = (): JSX.Element => {
           <div className={styles.priceDiv}>
             <div className={styles.titleInputDiv}>
               <h3 className={styles.titleP}> ფასი</h3>
+
               <div className={styles.priceInputDiv}>
-                <input className={styles.firstInput} type="number" />
+                <div className={styles.inputOverlay}>
+                  <input
+                    className={styles.firstInput}
+                    type="number"
+                    value={0}
+                  />
+                </div>
+
+                <div className={styles.inputOverlay}>
+                  <input
+                    className={styles.firstInput}
+                    type="number"
+                    value={0}
+                  />
+                </div>
               </div>
             </div>
           </div>

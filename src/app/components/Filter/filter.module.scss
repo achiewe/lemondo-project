@@ -100,15 +100,22 @@
             gap: 15px;
             align-items: center;
 
-            .firstInput {
+            .inputOverlay {
               width: 100%;
-              height: 44px;
               border: 1px solid $DarkWhite;
               border-radius: 10px;
               opacity: 1;
+              padding-left: 15px;
               background-image: url("../../../../public//assets/lari-input.svg");
               background-repeat: no-repeat;
               background-position: right 15px top 15px;
+
+              .firstInput {
+                width: 120px;
+                height: 44px;
+                border: none;
+                outline: none;
+              }
             }
           }
         }
