@@ -16,7 +16,7 @@
 
     .filterSorting {
       width: 100%;
-      border: 1px solid #e5e5ed;
+      border: 1px solid $DarkWhite;
       border-radius: 10px;
       background: $White 0% 0% no-repeat padding-box;
       opacity: 1;
@@ -28,14 +28,13 @@
 
       .sortingTitle {
         text-align: left;
-        font: normal normal normal 14px/40px TKT;
         font-size: 14px;
         line-height: 40px;
         font-family: "TKTRegular";
         font-weight: normal;
         font-style: normal;
         letter-spacing: 0px;
-        color: #696974;
+        color: $PitchBlackGray;
         opacity: 1;
       }
     }
