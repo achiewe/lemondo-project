@@ -1,0 +1,32 @@
+@import "../../colors.scss";
+
+.filterMain {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  background-color: $White;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .titleFilterDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    .titleFilter {
+      text-align: left;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 23px;
+      font-family: "TKTRegular";
+      letter-spacing: 0px;
+      color: $PitchBlackGray;
+      opacity: 1;
+    }
+  }
+}

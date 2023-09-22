@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Info } from "../../type";
 
-export interface infoProps {
+export interface InfoProps {
   info: Info[];
 }
 
-const initialState: infoProps = {
+const initialState: InfoProps = {
   info: [],
 };
 

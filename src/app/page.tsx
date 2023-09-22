@@ -5,6 +5,7 @@ import BurgerMenu from "./components/BurgerMenu/BurgerMenu";
 import { useState } from "react";
 import Advertisment from "./components/Advertisment/Advertisment";
 import Sorting from "./components/Sorting/Sorting";
+import Filter from "./components/Filter/Filter";
 
 export default function Home() {
   return (
@@ -12,7 +13,9 @@ export default function Home() {
       <Header />
       <BurgerMenu />
       <Advertisment />
+
       <Sorting />
+      <Filter />
     </main>
   );
 }
