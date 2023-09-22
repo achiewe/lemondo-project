@@ -1,5 +1,5 @@
 export interface Info {
-  email: string;
+  domain: string;
   Fullamount: string;
   yearlyAmount: string;
 }

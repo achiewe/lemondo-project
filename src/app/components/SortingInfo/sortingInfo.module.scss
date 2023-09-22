@@ -1,95 +1,100 @@
 @import "../../colors.scss";
 
 .infoContainer {
+  background-color: $White;
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 24px 20px;
-  background-color: $White;
   gap: 20px;
-
-  .infoDiv {
-    width: 100%;
+  .mainInfo {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 
-    .contactInfo {
+    .infoDiv {
+      width: 100%;
       display: flex;
       flex-direction: row;
-      align-items: center;
-      gap: 15px;
-
-      .emailP {
-        text-align: left;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 40px;
-        font-family: "TKTMedium";
-        letter-spacing: 0px;
-        color: $DarkBlue;
-        opacity: 1;
-      }
-    }
-
-    .sumBasketDiv {
-      display: flex;
-      flex-direction: row;
-      gap: 15px;
+      justify-content: space-between;
       align-items: center;
 
-      .sumDiv {
+      .contactInfo {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
 
-        .sumText {
+        .emailP {
           text-align: left;
           font-style: normal;
-          font-weight: bold;
-          font-size: 14px;
-          line-height: 22px;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 40px;
           font-family: "TKTMedium";
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 2px;
           letter-spacing: 0px;
           color: $DarkBlue;
-        }
-
-        .sumSpan {
-          text-align: right;
-          font-size: 10px;
-          line-height: 10px;
-          font-style: normal;
-          font-weight: normal;
-          font-family: "TKTMedium";
-          letter-spacing: 0px;
-          color: $PitchBlackGray;
           opacity: 1;
         }
       }
 
-      .basketButton {
-        width: 36px;
-        height: 36px;
-        padding-right: 3px;
+      .sumBasketDiv {
         display: flex;
-        justify-content: center;
+        flex-direction: row;
+        gap: 15px;
         align-items: center;
-        background-color: $LightGreen;
-        border: none;
-        border-radius: 10px;
+
+        .sumDiv {
+          display: flex;
+          flex-direction: column;
+
+          .sumText {
+            text-align: left;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 22px;
+            font-family: "TKTMedium";
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 2px;
+            letter-spacing: 0px;
+            color: $DarkBlue;
+          }
+
+          .sumSpan {
+            text-align: right;
+            font-size: 10px;
+            line-height: 10px;
+            font-style: normal;
+            font-weight: normal;
+            font-family: "TKTMedium";
+            letter-spacing: 0px;
+            color: $PitchBlackGray;
+            opacity: 1;
+          }
+        }
+
+        .basketButton {
+          width: 36px;
+          height: 36px;
+          padding-right: 3px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $LightGreen;
+          border: none;
+          border-radius: 10px;
+        }
       }
     }
-  }
 
-  .seperator {
-    border: none;
-    height: 1px;
-    background-color: $DarkGray;
-    width: 100%;
+    .seperator {
+      border: none;
+      height: 1px;
+      background-color: $DarkGray;
+      width: 100%;
+    }
   }
 }
