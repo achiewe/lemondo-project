@@ -2,6 +2,7 @@ import styles from "./sorting.module.scss";
 import sortSvg from "../../../../public/assets/adjustment-svgrepo-com.svg";
 import arrowSvg from "../../../../public/assets/Dropdown - 2.svg";
 import Image from "next/image";
+import SortingInfo from "../SortingInfo/SortingInfo";
 
 const Sorting = (): JSX.Element => {
   return (
@@ -16,6 +17,7 @@ const Sorting = (): JSX.Element => {
           <Image src={arrowSvg} alt="sort image" />
         </div>
       </div>
+      <SortingInfo />
     </div>
   );
 };

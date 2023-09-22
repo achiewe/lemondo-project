@@ -1,3 +1,5 @@
+@import "../../colors.scss";
+
 .mainContainer {
   width: 100%;
   display: flex;
@@ -16,7 +18,7 @@
       width: 100%;
       border: 1px solid #e5e5ed;
       border-radius: 10px;
-      background: #ffffff 0% 0% no-repeat padding-box;
+      background: $White 0% 0% no-repeat padding-box;
       opacity: 1;
       height: 40px;
       padding: 0 14px;
