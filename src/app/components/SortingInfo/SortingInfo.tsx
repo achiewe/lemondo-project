@@ -34,15 +34,18 @@ const SortingInfo = (): JSX.Element => {
           <p className={styles.emailP}> gijashvili.org.ge</p>
         </div>
         <div className={styles.sumBasketDiv}>
-          <h3 className={styles.sumText}>
-            40 000 <Image src={lariSvg} alt="lari svg" />
+          <div className={styles.sumDiv}>
+            <h3 className={styles.sumText}>
+              40 000 <Image src={lariSvg} alt="lari svg" />
+            </h3>
             <span className={styles.sumSpan}> 14 285.7 $</span>
-          </h3>
+          </div>
           <button className={styles.basketButton}>
             <Image src={basketSvg} alt="basket img" />
           </button>
         </div>
       </div>
+      <hr className={styles.seperator} />
     </div>
   );
 };

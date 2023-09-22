@@ -40,15 +40,24 @@
       gap: 15px;
       align-items: center;
 
-      .sumText {
-        text-align: left;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 22px;
-        font-family: "TKTRegular";
-        letter-spacing: 0px;
-        color: $DarkBlue;
+      .sumDiv {
+        display: flex;
+        flex-direction: column;
+
+        .sumText {
+          text-align: left;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 22px;
+          font-family: "TKTRegular";
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 2px;
+          letter-spacing: 0px;
+          color: $DarkBlue;
+        }
 
         .sumSpan {
           text-align: right;
@@ -75,5 +84,12 @@
         border-radius: 10px;
       }
     }
+  }
+
+  .seperator {
+    border: none;
+    height: 1px;
+    background-color: $DarkGray;
+    width: 100%;
   }
 }
