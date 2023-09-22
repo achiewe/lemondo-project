@@ -1,32 +1,32 @@
 [
   {
-    "domain": "gijashvili.org.ge",
-    "Fullamount": "40 000",
-    "yearlyAmount": "14 285.7"
+    "id": 1,
+    "domain": "example.org.ge",
+    "monthlyAmount": "40 000",
+    "amountDollar": "14 285.7"
   },
   {
-    "domain": "gijashvili.com.ge",
-    "Fullamount": "40 000",
-    "yearlyAmount": "14 285.7"
+    "id": 2,
+    "domain": "example.com.ge",
+    "monthlyAmount": "40 000",
+    "amountDollar": "14 285.7"
   },
   {
-    "domain": "gijashvili.edu.ge",
-    "Fullamount": "40 000",
-    "yearlyAmount": "14 285.7"
+    "id": 3,
+    "domain": "example.edu.ge",
+    "monthlyAmount": "40 000",
+    "amountDollar": "14 285.7"
   },
   {
-    "domain": "gijashvili.net.ge",
-    "Fullamount": "40 000",
-    "yearlyAmount": "14 285.7"
+    "id": 4,
+    "domain": "example.net.ge",
+    "monthlyAmount": "40 000",
+    "amountDollar": "14 285.7"
   },
   {
-    "domain": "gijashvili.pvt.ge",
-    "Fullamount": "40 000",
-    "yearlyAmount": "14 285.7"
-  },
-  {
-    "domain": "gijashvili.org.ge",
-    "Fullamount": "40 000",
-    "yearlyAmount": "14 285.7"
+    "id": 5,
+    "domain": "example.pvt.ge",
+    "monthlyAmount": "40 000",
+    "amountDollar": "14 285.7"
   }
 ]
