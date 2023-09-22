@@ -2,8 +2,24 @@ import styles from "./sortingInfo.module.scss";
 import lariSvg from "../../../../public/assets/lari.svg";
 import basketSvg from "../../../../public/assets/Fill 932.svg";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { Rootstate } from "@/features/store";
+import { useEffect } from "react";
+import axios from "axios";
+import { setInfo } from "@/features/InfoArraySlice";
 
 const SortingInfo = (): JSX.Element => {
+  const info = useSelector((store: Rootstate) => store.info.info);
+
+  useEffect(() => {
+    const requesData = async () => {
+      const response = await axios.get("../../../../public/data.json");
+      const data = response.data;
+      setInfo(data);
+    };
+    requesData();
+  }, []);
+
   return (
     <div className={styles.infoContainer}>
       <div className={styles.infoDiv}>
