@@ -12,10 +12,15 @@ import flagSvg from "../../../../public/assets/flagDesk.svg";
 import symbolDeskSvg from "../../../../public/assets/SymbolDesk.svg";
 import Image from "next/image";
 import { setOpenBurger } from "@/features/OpenBurgerSilce";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Rootstate } from "@/features/store";
 
 const Header = (): JSX.Element => {
   const dispatch = useDispatch();
+  const calculate = useSelector(
+    (store: Rootstate) => store.calculate.calculate
+  );
+
   return (
     <header className={styles.header}>
       <div className={styles.headerMain}>
@@ -51,6 +56,18 @@ const Header = (): JSX.Element => {
             src={basketSvg}
             alt="basket img"
           />
+
+          <div
+            className={styles.resultDiv}
+            style={{ display: calculate === 0 ? "none" : "flex" }}
+          >
+            <p
+              className={styles.resultP}
+              style={{ display: calculate === 0 ? "none" : "flex" }}
+            >
+              {calculate}
+            </p>
+          </div>
 
           <Image
             className={styles.accountSvg}

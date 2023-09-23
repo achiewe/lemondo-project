@@ -51,6 +51,7 @@
       flex-direction: row;
       gap: 22px;
       align-items: flex-start;
+      position: relative;
       height: 21px;
       @media (min-width: 1024px) {
         align-items: center;
@@ -66,6 +67,38 @@
       .basketSvg {
         @media (min-width: 1024px) {
           display: none;
+        }
+      }
+
+      .resultDiv {
+        width: 17px;
+        height: 17px;
+        border-radius: 11px;
+        position: absolute;
+        right: 30px;
+        bottom: 15px;
+        background-color: $redColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (min-width: 1024px) {
+          right: 0;
+          left: 110px;
+          bottom: 20px;
+          width: 20px;
+          height: 20px;
+        }
+
+        .resultP {
+          text-align: center;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 11px;
+          line-height: 14px;
+          font-family: "Helvetica Neue LT GEO", sans-serif;
+          letter-spacing: 0px;
+          color: $White;
+          opacity: 1;
         }
       }
 
