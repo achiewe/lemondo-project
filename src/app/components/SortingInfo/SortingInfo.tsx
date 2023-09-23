@@ -5,13 +5,16 @@ import clickSvg from "../../../../public/assets/click4868.svg";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { Rootstate } from "@/features/store";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { setInfo } from "@/features/InfoArraySlice";
 import { setCalculate } from "@/features/CalculateAddSlice";
 
 const SortingInfo = (): JSX.Element => {
   const info = useSelector((store: Rootstate) => store.info.info);
+  const calculate = useSelector(
+    (store: Rootstate) => store.calculate.calculate
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,9 +26,11 @@ const SortingInfo = (): JSX.Element => {
     requesData();
   }, []);
 
+  const [clickedItems, setClickedItems] = useState<number[]>([]);
+
   return (
     <div className={styles.infoContainer}>
-      {info.map((item, id) => (
+      {info.map((item) => (
         <div className={styles.mainInfo} key={item.id}>
           <div className={styles.infoDiv}>
             <div className={styles.contactInfo}>
@@ -63,13 +68,26 @@ const SortingInfo = (): JSX.Element => {
               </div>
               <button
                 className={styles.basketButton}
+                style={{
+                  display: clickedItems.includes(item.id) ? "none" : "flex",
+                }}
                 onClick={() => {
-                  dispatch(setCalculate());
+                  if (!clickedItems.includes(item.id)) {
+                    setClickedItems([...clickedItems, item.id]);
+                    dispatch(setCalculate());
+                  }
                 }}
               >
                 <Image src={basketSvg} alt="basket img" />
               </button>
-              <button className={styles.InBasket}>კალთაშია</button>
+              <div
+                className={styles.InBasket}
+                style={{
+                  display: clickedItems.includes(item.id) ? "flex" : "none",
+                }}
+              >
+                <Image src={clickSvg} alt="click svg" /> კალათაშია
+              </div>
             </div>
           </div>
           <hr className={styles.seperator} />
