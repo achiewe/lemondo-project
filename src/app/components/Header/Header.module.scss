@@ -43,6 +43,7 @@
 
       .symbolSvg {
         display: none;
+        cursor: pointer;
         @media (min-width: 1024px) {
           display: block;
         }
@@ -122,6 +123,7 @@
           opacity: 1;
           width: 50px;
           height: 46px;
+          cursor: pointer;
         }
       }
 
