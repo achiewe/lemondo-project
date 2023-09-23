@@ -12,11 +12,6 @@ import { setCalculate } from "@/features/CalculateAddSlice";
 const SortingInfo = (): JSX.Element => {
   const info = useSelector((store: Rootstate) => store.info.info);
   const dispatch = useDispatch();
-  const calculate = useSelector(
-    (store: Rootstate) => store.calculate.calculate
-  );
-
-  console.log(calculate);
 
   useEffect(() => {
     const requesData = async () => {

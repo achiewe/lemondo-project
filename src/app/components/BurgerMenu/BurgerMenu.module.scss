@@ -13,4 +13,11 @@
   overflow-x: hidden;
   z-index: 1;
   transition: 0.6s;
+
+  @media (min-width: 1024px) {
+    overflow: visible;
+    position: inherit;
+    left: 10px;
+    top: 100px;
+  }
 }
