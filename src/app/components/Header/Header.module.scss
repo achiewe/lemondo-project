@@ -18,6 +18,9 @@
       max-width: 1286px;
       padding: 28px 20px;
     }
+    @media (min-width: 1295px) {
+      padding: 28px 0;
+    }
     .siteContentdiv {
       display: flex;
       flex-direction: row;
