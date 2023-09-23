@@ -101,6 +101,28 @@
           border: none;
           border-radius: 10px;
         }
+
+        .InBasket {
+          display: flex;
+          width: 125px;
+          height: 36px;
+          justify-content: center;
+          border: none;
+          align-items: center;
+          border-radius: 10px;
+          opacity: 1;
+          background-color: $MistyGrey;
+          text-align: left;
+          font-family: "TKTMedium";
+          font-style: normal;
+          font-variant: normal;
+          font-weight: medium;
+          font-size: 14px;
+          line-height: 40px;
+          letter-spacing: 0px;
+          color: #696974;
+          opacity: 1;
+        }
       }
     }
 

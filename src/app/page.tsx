@@ -17,10 +17,10 @@ export default function Home() {
       <NavbarDesk />
       <Advertisment />
       <Sorting />
+      <Filter />
       <div className={styles.SortingFiltDiv}>
         <SortingInfo />
       </div>
-      <Filter />
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import styles from "./sortingInfo.module.scss";
 import lariSvg from "../../../../public/assets/lari.svg";
 import basketSvg from "../../../../public/assets/Fill 932.svg";
+import clickSvg from "../../../../public/assets/click4868.svg";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { Rootstate } from "@/features/store";
@@ -68,6 +69,7 @@ const SortingInfo = (): JSX.Element => {
               >
                 <Image src={basketSvg} alt="basket img" />
               </button>
+              <button className={styles.InBasket}>კალთაშია</button>
             </div>
           </div>
           <hr className={styles.seperator} />

@@ -1,11 +1,18 @@
 @import "../../colors.scss";
 
+.deskFilter {
+  display: none;
+}
+
+.filter {
+  display: flex;
+}
+
 .filterMain {
   width: 100%;
   min-height: 100vh;
   position: absolute;
   background-color: $White;
-  display: none;
   flex-direction: column;
   gap: 40px;
 

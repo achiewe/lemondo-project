@@ -11,10 +11,14 @@ const Filter = (): JSX.Element => {
   );
 
   const dispatch = useDispatch();
+  const mainClass = `${styles.filterMain} ${
+    openFilter ? styles.filter : styles.deskFilter
+  }`;
   return (
     <div
-      className={styles.filterMain}
-      style={{ display: openFilter ? "flex" : "none" }}
+      className={mainClass}
+
+      // style={{ display: openFilter ? "flex" : "none" }}
     >
       <div className={styles.FilterTopMain}>
         <div className={styles.titleFilterDiv}>
