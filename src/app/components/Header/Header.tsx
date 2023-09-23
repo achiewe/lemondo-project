@@ -8,6 +8,8 @@ import notificDeskSvg from "../../../../public/assets/notificDesk.svg";
 import basketDeskSvg from "../../../../public/assets/basketDesk.svg";
 import accountDeskSvg from "../../../../public/assets/accountDesk.svg";
 import arrowDeskSvg from "../../../../public/assets/arrowHeadDesk.svg";
+import flagSvg from "../../../../public/assets/flagDesk.svg";
+import symbolDeskSvg from "../../../../public/assets/SymbolDesk.svg";
 import Image from "next/image";
 import { setOpenBurger } from "@/features/OpenBurgerSilce";
 import { useDispatch } from "react-redux";
@@ -26,7 +28,16 @@ const Header = (): JSX.Element => {
             alt="burger-menu img"
             className={styles.burgerMenuImg}
           />
-          <Image src={siteSvg} alt="site url img" />
+          <Image
+            className={styles.siteMobSvg}
+            src={siteSvg}
+            alt="site url img"
+          />
+          <Image
+            className={styles.symbolSvg}
+            src={symbolDeskSvg}
+            alt="site url image"
+          />
         </div>
         <div className={styles.userActions}>
           <Image
@@ -49,15 +60,21 @@ const Header = (): JSX.Element => {
           <div className={styles.iconDiv}>
             <Image src={notificDeskSvg} alt="notification image" />
           </div>
+
           <div className={styles.iconDiv}>
             <Image src={basketDeskSvg} alt="basket image" />
           </div>
+
           <div className={styles.iconDivAcc}>
             <div className={styles.accountProfile}>
               <Image src={accountDeskSvg} alt="account image" />
               <p className={styles.profileP}> Kancha Co.</p>
             </div>
             <Image src={arrowDeskSvg} alt="arrow image" />
+          </div>
+
+          <div className={styles.iconDiv}>
+            <Image src={flagSvg} alt="flag image" />
           </div>
         </div>
       </div>

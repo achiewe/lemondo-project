@@ -31,6 +31,19 @@
           display: none;
         }
       }
+
+      .siteMobSvg {
+        @media (min-width: 1024px) {
+          display: none;
+        }
+      }
+
+      .symbolSvg {
+        display: none;
+        @media (min-width: 1024px) {
+          display: block;
+        }
+      }
     }
 
     .userActions {
@@ -87,7 +100,7 @@
           display: flex;
           flex-direction: row;
           align-items: center;
-          gap: 27px;
+          gap: 25px;
           padding: 0 14px;
         }
         .accountProfile {
