@@ -100,6 +100,11 @@
           background-color: $LightGreen;
           border: none;
           border-radius: 10px;
+          cursor: pointer;
+        }
+
+        .basketButton:hover {
+          opacity: 0.6;
         }
 
         .InBasket {

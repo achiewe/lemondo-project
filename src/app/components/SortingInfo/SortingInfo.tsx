@@ -61,10 +61,22 @@ const SortingInfo = (): JSX.Element => {
             </div>
             <div className={styles.sumBasketDiv}>
               <div className={styles.sumDiv}>
-                <h3 className={styles.sumText}>
+                <h3
+                  className={styles.sumText}
+                  style={{
+                    display: clickedItems.includes(item.id) ? "none" : "flex",
+                  }}
+                >
                   {item.monthlyAmount} <Image src={lariSvg} alt="lari svg" />
                 </h3>
-                <span className={styles.sumSpan}>{item.amountDollar} $</span>
+                <span
+                  className={styles.sumSpan}
+                  style={{
+                    display: clickedItems.includes(item.id) ? "none" : "flex",
+                  }}
+                >
+                  {item.amountDollar} $
+                </span>
               </div>
               <button
                 className={styles.basketButton}
