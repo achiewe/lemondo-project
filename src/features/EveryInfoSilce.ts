@@ -1,0 +1,3 @@
+// export interface everyProps{
+//     everyInfo:
+// }

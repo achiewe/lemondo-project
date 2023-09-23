@@ -3,4 +3,5 @@ export interface Info {
   domain: string;
   monthlyAmount: string;
   amountDollar: string;
+  category: string;
 }

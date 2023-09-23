@@ -3,29 +3,114 @@
 .header {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 28px 20px;
+  justify-content: center;
   align-items: center;
   background-color: $White;
 
-  .siteContentdiv {
+  .headerMain {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 14px;
-    align-items: flex-start;
-
-    .burgerMenuImg {
-      width: 16px;
-      height: 14px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 20px;
+    @media (min-width: 1024px) {
+      max-width: 1286px;
+      padding: 28px 20px;
     }
-  }
+    .siteContentdiv {
+      display: flex;
+      flex-direction: row;
+      gap: 14px;
+      align-items: flex-start;
 
-  .userActions {
-    display: flex;
-    flex-direction: row;
-    gap: 22px;
-    align-items: flex-start;
-    height: 21px;
+      .burgerMenuImg {
+        width: 16px;
+        height: 14px;
+        @media (min-width: 1024px) {
+          display: none;
+        }
+      }
+    }
+
+    .userActions {
+      display: flex;
+      flex-direction: row;
+      gap: 22px;
+      align-items: flex-start;
+      height: 21px;
+      @media (min-width: 1024px) {
+        align-items: center;
+        gap: 20px;
+      }
+
+      .notificationSvg {
+        @media (min-width: 1024px) {
+          display: none;
+        }
+      }
+
+      .basketSvg {
+        @media (min-width: 1024px) {
+          display: none;
+        }
+      }
+
+      .accountSvg {
+        @media (min-width: 1024px) {
+          display: none;
+        }
+      }
+
+      .iconDiv {
+        display: none;
+        @media (min-width: 1024px) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid $DarkGray;
+          border-radius: 12px;
+          opacity: 1;
+          width: 50px;
+          height: 46px;
+        }
+      }
+
+      .iconDivAcc {
+        display: none;
+        @media (min-width: 1024px) {
+          width: 160px;
+          height: 46px;
+          border: 1px solid $DarkGray;
+          border-radius: 12px;
+          opacity: 1;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 27px;
+          padding: 0 14px;
+        }
+        .accountProfile {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+
+          .profileP {
+            text-align: left;
+            font-style: normal;
+            font-weight: normal;
+            font-stretch: normal;
+            font-size: 14px;
+            line-height: 20px;
+            font-family: "TKTRegular";
+            letter-spacing: 0px;
+            color: $PitchBlackGray;
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 }

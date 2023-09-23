@@ -13,7 +13,6 @@ export default function Home() {
       <Header />
       <BurgerMenu />
       <Advertisment />
-
       <Sorting />
       <Filter />
     </main>
