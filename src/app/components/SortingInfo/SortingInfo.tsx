@@ -7,10 +7,16 @@ import { Rootstate } from "@/features/store";
 import { useEffect } from "react";
 import axios from "axios";
 import { setInfo } from "@/features/InfoArraySlice";
+import { setCalculate } from "@/features/CalculateAddSlice";
 
 const SortingInfo = (): JSX.Element => {
   const info = useSelector((store: Rootstate) => store.info.info);
   const dispatch = useDispatch();
+  const calculate = useSelector(
+    (store: Rootstate) => store.calculate.calculate
+  );
+
+  console.log(calculate);
 
   useEffect(() => {
     const requesData = async () => {
@@ -59,7 +65,12 @@ const SortingInfo = (): JSX.Element => {
                 </h3>
                 <span className={styles.sumSpan}>{item.amountDollar} $</span>
               </div>
-              <button className={styles.basketButton}>
+              <button
+                className={styles.basketButton}
+                onClick={() => {
+                  dispatch(setCalculate());
+                }}
+              >
                 <Image src={basketSvg} alt="basket img" />
               </button>
             </div>
