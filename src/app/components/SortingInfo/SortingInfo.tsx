@@ -2,6 +2,8 @@ import styles from "./sortingInfo.module.scss";
 import lariSvg from "../../../../public/assets/lari.svg";
 import basketSvg from "../../../../public/assets/Fill 932.svg";
 import clickSvg from "../../../../public/assets/click4868.svg";
+import sendSvg from "../../../../public/assets/Btn_send.svg";
+import sendSvgFoc from "../../../../public/assets/btn_arrowDown.svg";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { Rootstate } from "@/features/store";
@@ -27,36 +29,29 @@ const SortingInfo = (): JSX.Element => {
   }, []);
 
   const [clickedItems, setClickedItems] = useState<number[]>([]);
+  const [clickDiv, setclickDiv] = useState<number | null>(null);
 
   return (
     <div className={styles.infoContainer}>
       {info.map((item) => (
-        <div className={styles.mainInfo} key={item.id}>
+        <div
+          className={styles.mainInfo}
+          key={item.id}
+          style={{
+            backgroundColor: clickDiv === item.id ? "#F5F5F8" : "white",
+          }}
+          onClick={() => {
+            if (clickDiv !== item.id) {
+              setclickDiv(item.id);
+            }
+          }}
+        >
           <div className={styles.infoDiv}>
             <div className={styles.contactInfo}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-              >
-                <g id="Btn_send" transform="translate(-1.227 -2)">
-                  <rect
-                    id="Rectangle"
-                    width="36"
-                    height="36"
-                    rx="10"
-                    transform="translate(1.227 2)"
-                    fill="#f5f5f8"
-                  />
-                  <path
-                    id="Shape"
-                    d="M5,3.821,8.577.244A.833.833,0,0,1,9.756,1.423L5.589,5.589a.833.833,0,0,1-1.179,0L.244,1.423A.833.833,0,0,1,1.423.244Z"
-                    transform="translate(14.227 18.083)"
-                    fill="#696974"
-                  />
-                </g>
-              </svg>
+              <Image
+                src={clickDiv === item.id ? sendSvgFoc : sendSvg}
+                alt="send image"
+              />
               <p className={styles.emailP}>{item.domain}</p>
             </div>
             <div className={styles.sumBasketDiv}>
@@ -82,6 +77,7 @@ const SortingInfo = (): JSX.Element => {
                 className={styles.basketButton}
                 style={{
                   display: clickedItems.includes(item.id) ? "none" : "flex",
+                  width: clickDiv === item.id ? "120px" : "36px",
                 }}
                 onClick={() => {
                   if (!clickedItems.includes(item.id)) {
@@ -90,6 +86,14 @@ const SortingInfo = (): JSX.Element => {
                   }
                 }}
               >
+                <p
+                  className={styles.basketP}
+                  style={{
+                    display: clickDiv === item.id ? "flex" : "none",
+                  }}
+                >
+                  დამატება
+                </p>
                 <Image src={basketSvg} alt="basket img" />
               </button>
               <div

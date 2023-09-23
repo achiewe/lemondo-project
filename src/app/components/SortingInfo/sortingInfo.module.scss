@@ -10,12 +10,17 @@
 
   @media (min-width: 1024px) {
     width: 866px;
-    padding: 30px 40px 54px 40px;
+    padding: 30px 20px 54px 20px;
   }
   .mainInfo {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    border-radius: 10px;
+    width: 100%;
+    padding: 17px 16px 0px 21px;
+    cursor: pointer;
+
     @media (min-width: 1024px) {
       gap: 16px;
     }
@@ -61,6 +66,8 @@
         .sumDiv {
           display: flex;
           flex-direction: column;
+          width: 100%;
+          align-items: flex-end;
 
           .sumText {
             text-align: left;
@@ -97,10 +104,25 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          flex-direction: row;
+          gap: 7px;
           background-color: $LightGreen;
+          padding: 0 15px;
           border: none;
           border-radius: 10px;
           cursor: pointer;
+
+          .basketP {
+            text-align: left;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 40px;
+            font-family: "TKTRegular";
+            letter-spacing: 0px;
+            color: $White;
+            opacity: 1;
+          }
         }
 
         .basketButton:hover {
@@ -115,6 +137,7 @@
           border: none;
           align-items: center;
           flex-direction: row;
+          padding: 0 16px;
           gap: 6px;
           border-radius: 10px;
           opacity: 1;
