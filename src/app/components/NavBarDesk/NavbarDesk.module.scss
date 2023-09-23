@@ -1,0 +1,66 @@
+@import "../../colors.scss";
+
+.MainNavbar {
+  display: none;
+
+  @media (min-width: 1024px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 19px;
+    background-color: $White;
+  }
+  .navHr {
+    border: 1px solid #f1f1f5;
+    opacity: 1;
+    width: 100%;
+  }
+
+  .navbarList {
+    max-width: 1286px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .firstHalf {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 29px;
+
+      .firstNavItem {
+        text-decoration: none;
+        list-style-type: none;
+        text-align: left;
+        font-size: 14px;
+        font-family: "TKTMedium";
+        letter-spacing: 0px;
+        color: $PitchBlackGray;
+        opacity: 1;
+      }
+    }
+
+    .secondHalf {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 29px;
+
+      .secondNavItem {
+        text-decoration: none;
+        list-style-type: none;
+        text-align: left;
+        font-size: 14px;
+        font-family: "TKTMedium";
+        letter-spacing: 0px;
+        color: $PitchBlackGray;
+        opacity: 1;
+      }
+    }
+  }
+}
