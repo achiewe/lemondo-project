@@ -58,7 +58,6 @@ const Sorting = (): JSX.Element => {
           როგორ გავყიდო დომენი?
         </a>
       </div>
-      <SortingInfo />
     </div>
   );
 };

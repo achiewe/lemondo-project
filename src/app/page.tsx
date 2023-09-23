@@ -7,6 +7,7 @@ import Advertisment from "./components/Advertisment/Advertisment";
 import Sorting from "./components/Sorting/Sorting";
 import Filter from "./components/Filter/Filter";
 import NavbarDesk from "./components/NavBarDesk/NavbarDesk";
+import SortingInfo from "./components/SortingInfo/SortingInfo";
 
 export default function Home() {
   return (
@@ -16,6 +17,9 @@ export default function Home() {
       <NavbarDesk />
       <Advertisment />
       <Sorting />
+      <div className={styles.SortingFiltDiv}>
+        <SortingInfo />
+      </div>
       <Filter />
     </main>
   );

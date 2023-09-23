@@ -7,10 +7,18 @@
   width: 100%;
   padding: 24px 20px;
   gap: 20px;
+
+  @media (min-width: 1024px) {
+    width: 866px;
+    padding: 30px 40px 54px 40px;
+  }
   .mainInfo {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @media (min-width: 1024px) {
+      gap: 16px;
+    }
 
     .infoDiv {
       width: 100%;
@@ -24,6 +32,9 @@
         flex-direction: row;
         align-items: center;
         gap: 15px;
+        @media (min-width: 1024px) {
+          gap: 20px;
+        }
 
         .emailP {
           text-align: left;
@@ -43,6 +54,9 @@
         flex-direction: row;
         gap: 15px;
         align-items: center;
+        @media (min-width: 1024px) {
+          gap: 21px;
+        }
 
         .sumDiv {
           display: flex;
