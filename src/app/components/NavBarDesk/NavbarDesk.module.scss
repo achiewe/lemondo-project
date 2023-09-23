@@ -50,7 +50,12 @@
         font-family: "TKTMedium";
         letter-spacing: 0px;
         color: $PitchBlackGray;
+        cursor: pointer;
         opacity: 1;
+      }
+
+      .firstNavItem:hover {
+        opacity: 0.5;
       }
     }
 
@@ -70,7 +75,11 @@
         font-family: "TKTMedium";
         letter-spacing: 0px;
         color: $PitchBlackGray;
+        cursor: pointer;
         opacity: 1;
+      }
+      .secondNavItem:hover {
+        opacity: 0.5;
       }
     }
   }
