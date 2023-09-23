@@ -14,12 +14,10 @@ const NavbarDesk = (): JSX.Element => {
           <li className={styles.firstNavItem}> დომენის მარკეტი</li>
         </ul>
         <ul className={styles.secondHalf}>
-          <li className={styles.secondNavItem}> დომენი</li>
-          <li className={styles.secondNavItem}> ტრანსფერი</li>
-          <li className={styles.secondNavItem}> ჰოსტინგი</li>
-          <li className={styles.secondNavItem}> Gmail</li>
-          <li className={styles.secondNavItem}> ვებგვერდი</li>
-          <li className={styles.secondNavItem}> დომენის მარკეტი</li>
+          <li className={styles.secondNavItem}> ჩვენს შესახებ</li>
+          <li className={styles.secondNavItem}> ფასები</li>
+          <li className={styles.secondNavItem}> ბლოგი</li>
+          <li className={styles.secondNavItem}> დახმარება</li>
         </ul>
       </div>
     </div>
