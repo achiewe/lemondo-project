@@ -17,7 +17,6 @@ export default function Home() {
       <NavbarDesk />
       <Advertisment />
       <Sorting />
-
       <div className={styles.SortingFiltDiv}>
         <Filter />
         <SortingInfo />

@@ -15,7 +15,7 @@ const Filter = (): JSX.Element => {
     openFilter ? styles.filter : styles.deskFilter
   }`;
   return (
-    <div className={mainClass}>
+    <form className={mainClass}>
       <div className={styles.FilterTopMain}>
         <div className={styles.titleFilterDiv}>
           <h3 className={styles.titleFilter}> ფილტრი</h3>
@@ -188,7 +188,7 @@ const Filter = (): JSX.Element => {
           ᲫᲘᲔᲑᲐ
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 
