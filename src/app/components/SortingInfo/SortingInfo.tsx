@@ -10,6 +10,7 @@ import { Rootstate } from "@/features/store";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { setInfo } from "@/features/InfoArraySlice";
+
 import { setCalculate } from "@/features/CalculateAddSlice";
 
 const SortingInfo = (): JSX.Element => {
@@ -19,17 +20,17 @@ const SortingInfo = (): JSX.Element => {
   );
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const requesData = async () => {
-      const response = await axios.get("/data.json");
-      const data = response.data;
-      dispatch(setInfo(data));
-    };
-    requesData();
-  }, []);
-
   const [clickedItems, setClickedItems] = useState<number[]>([]);
   const [clickDiv, setclickDiv] = useState<number | null>(null);
+
+  // useEffect(() => {
+  //   const requesData = async () => {
+  //     const response = await axios.get("/data.json");
+  //     const data = response.data;
+  //     dispatch(setInfo(data));
+  //   };
+  //   requesData();
+  // }, []);
 
   return (
     <div className={styles.infoContainer}>

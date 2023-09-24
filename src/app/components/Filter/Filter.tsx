@@ -5,10 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Rootstate } from "@/features/store";
 import { setOpenFilter } from "@/features/OpenFilterSlice";
 import FilterCategory from "./filterCategory/FilterCategory";
+import { Info } from "../../../../type";
 import { setText } from "@/features/TakeNameSlice";
+import { useEffect } from "react";
 import { useState } from "react";
+import { setInfo } from "@/features/InfoArraySlice";
 
 const Filter = (): JSX.Element => {
+  const text = useSelector((store: Rootstate) => store.text.text);
+  console.log("gaveshviiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" + " " + text);
   const openFilter = useSelector(
     (store: Rootstate) => store.openFilter.openFilter
   );
@@ -18,11 +23,37 @@ const Filter = (): JSX.Element => {
     openFilter ? styles.filter : styles.deskFilter
   }`;
 
-  const text = useSelector((store: Rootstate) => store.text.text);
   const [saveText, setSaveText] = useState<string>(" ");
+  const info = useSelector((store: Rootstate) => store.info.info);
 
+  const filterAll = (): Info[] => {
+    let filterData = info;
+    if (text.length > 0) {
+      filterData = filterData.filter((data) => {
+        return data.domain.toLowerCase().includes(text.toLowerCase());
+      });
+    }
+
+    return filterData;
+  };
+  const filterData = filterAll();
+
+  console.log(filterData);
+
+  // useEffect(() => {
+  //   dispatch(setInfo(filterData));
+  // }, [filterData]);
+
+  console.log(info, "dqwdqwdqwd");
   return (
-    <form className={mainClass}>
+    <form
+      className={mainClass}
+      onSubmit={(e) => {
+        e.preventDefault();
+
+        dispatch(setText(saveText));
+      }}
+    >
       <div className={styles.FilterTopMain}>
         <div className={styles.titleFilterDiv}>
           <h3 className={styles.titleFilter}> ფილტრი</h3>
@@ -38,11 +69,12 @@ const Filter = (): JSX.Element => {
         <div className={styles.inputDiv}>
           <input
             onChange={(e) => {
-              dispatch(setText(e.target.value));
+              setSaveText(e.target.value);
             }}
             className={styles.inputName}
             type="text"
             placeholder="სახელით ძიება"
+            value={saveText}
           />
         </div>
 
@@ -53,19 +85,11 @@ const Filter = (): JSX.Element => {
 
               <div className={styles.priceInputDiv}>
                 <div className={styles.inputOverlay}>
-                  <input
-                    className={styles.firstInput}
-                    type="number"
-                    // value={0}
-                  />
+                  <input className={styles.firstInput} type="number" />
                 </div>
 
                 <div className={styles.secondInputOverlay}>
-                  <input
-                    className={styles.secondInput}
-                    type="number"
-                    // value={0}
-                  />
+                  <input className={styles.secondInput} type="number" />
                 </div>
               </div>
 
@@ -112,8 +136,12 @@ const Filter = (): JSX.Element => {
                 <input
                   type="range"
                   className={styles.sliderSec}
-                  min="0"
-                  max="50"
+                  min="1"
+                  max="50000"
+                  // onChange={(e) => {
+                  //   console.log("Min:", e.target.min);
+                  //   console.log("Max:", e.target.max);
+                  // }}
                 />
                 <input
                   type="range"
@@ -128,14 +156,7 @@ const Filter = (): JSX.Element => {
       </div>
       <FilterCategory />
       <div className={styles.buttonDiv}>
-        <button
-          className={styles.submitButton}
-          type="submit"
-          onSubmit={(e) => {
-            e.preventDefault();
-            setSaveText(text);
-          }}
-        >
+        <button className={styles.submitButton} type="submit">
           ᲫᲘᲔᲑᲐ
         </button>
       </div>

@@ -9,12 +9,17 @@ import Filter from "./components/Filter/Filter";
 import NavbarDesk from "./components/NavBarDesk/NavbarDesk";
 import SortingInfo from "./components/SortingInfo/SortingInfo";
 import { useEffect } from "react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import data from "../../public/data.json";
+import { setInfo } from "@/features/InfoArraySlice";
 
 export default function Home() {
   const [shouldShowFilter, setShouldShowFilter] = useState(true);
-
+  const dispatch = useDispatch();
   useEffect(() => {
-    // Add an event listener to track window resize
+    dispatch(setInfo(data));
+
     function handleResize() {
       if (window.innerWidth >= 1024) {
         setShouldShowFilter(false);
@@ -34,6 +39,7 @@ export default function Home() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <main className={styles.MainPage}>
       <Header />

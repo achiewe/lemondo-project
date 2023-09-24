@@ -1,84 +1,84 @@
 [
   {
     "id": 1,
-    "domain": ".org.ge",
+    "domain": "exampleბიზნესი.org.ge",
     "category": "ბიზნესი",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 2,
-    "domain": "ge.ge",
+    "domain": "exampleუძრავიქონება.ge.ge",
     "category": "უძრავი ქონება",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 3,
-    "domain": ".org.ge",
+    "domain": "exampleავტო.org.ge",
     "category": "ავტო",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 4,
-    "domain": ".com.ge",
+    "domain": "exampleმედიცინა.com.ge",
     "category": "მედიცინა",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 5,
-    "domain": ".net.ge",
+    "domain": "exampleტექნოლოგიები.net.ge",
     "category": "ტექნოლოგიები",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 6,
-    "domain": ".edu.ge",
+    "domain": "exampleთამაშები.edu.ge",
     "category": "თამაშები",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 7,
-    "domain": ".school.ge",
+    "domain": "exampleგართობა-და-დასვენება.school.ge",
     "category": "გართობა და დასვენება",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 8,
-    "domain": "ge.ge",
+    "domain": "exampleმედია.ge.ge",
     "category": "მედია",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 9,
-    "domain": ".edu.ge",
+    "domain": "exampleგანათლება.edu.ge",
     "category": "განათლება",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 10,
-    "domain": ".net.ge",
+    "domain": "exampleკომერცია.net.ge",
     "category": "კომერცია",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 11,
-    "domain": ".school.ge",
+    "domain": "exampleფინანსები.school.ge",
     "category": "ფინანსები",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
   },
   {
     "id": 12,
-    "domain": ".com.ge",
+    "domain": "exampleბიზნესი.com.ge",
     "category": "ბიზნესი",
     "monthlyAmount": "10 000",
     "amountDollar": "14 285.7 $"
