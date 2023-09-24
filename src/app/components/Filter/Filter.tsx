@@ -60,14 +60,20 @@ const Filter = (): JSX.Element => {
                 </div>
               </div>
 
-              {/* <div className={styles.rangeDiv}> */}
-              <input
-                className={styles.slider}
-                type="range"
-                min="0"
-                // max="2"
-              />
-              {/* </div> */}
+              <div className={styles.rangeSlider}>
+                <input
+                  type="range"
+                  className={styles.slider}
+                  min="0"
+                  max="50"
+                />
+                <input
+                  type="range"
+                  className={styles.slider}
+                  min="50"
+                  max="100"
+                />
+              </div>
             </div>
           </div>
 
