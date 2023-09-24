@@ -11,6 +11,8 @@
   @media (min-width: 1024px) {
     width: 866px;
     padding: 30px 20px 54px 20px;
+    border-radius: 15px;
+    border: 1px solid $DarkGray;
   }
   .mainInfo {
     display: flex;

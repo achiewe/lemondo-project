@@ -20,12 +20,18 @@
     display: flex;
     width: 380px;
     position: inherit;
+    border: 1px solid $DarkGray;
+    border-radius: 15px;
+    padding-bottom: 48px;
   }
 
   .FilterTopMain {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    @media (min-width: 1024px) {
+      gap: 35px;
+    }
 
     .titleFilterDiv {
       width: 100%;
@@ -35,6 +41,9 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0px 2px 5px #0000000f;
+      @media (min-width: 1024px) {
+        display: none;
+      }
 
       .titleFilter {
         text-align: left;
@@ -52,6 +61,9 @@
     .inputDiv {
       width: 100%;
       padding: 0 20px;
+      @media (min-width: 1024px) {
+        padding: 35px 35px 0 35px;
+      }
 
       .inputName {
         width: 100%;
@@ -80,6 +92,9 @@
       width: 100%;
       padding: 0 20px;
       gap: 52px;
+      @media (min-width: 1024px) {
+        padding: 0 35px;
+      }
 
       .priceDiv {
         width: 100%;
@@ -92,6 +107,9 @@
           display: flex;
           flex-direction: column;
           gap: 28px;
+          @media (min-width: 1024px) {
+            gap: 18px;
+          }
 
           .titleP {
             text-align: left;
@@ -212,6 +230,9 @@
           display: flex;
           flex-direction: column;
           gap: 28px;
+          @media (min-width: 1024px) {
+            gap: 18px;
+          }
 
           .titleP {
             text-align: left;
@@ -323,6 +344,9 @@
     flex-direction: column;
     padding: 0 20px;
     gap: 21px;
+    @media (min-width: 1024px) {
+      padding: 0 35px;
+    }
 
     .categoryP {
       text-align: left;
@@ -380,6 +404,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (min-width: 1024px) {
+      display: none;
+    }
 
     .submitButton {
       width: 335px;
