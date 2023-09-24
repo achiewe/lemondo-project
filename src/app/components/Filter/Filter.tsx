@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Rootstate } from "@/features/store";
 import { setOpenFilter } from "@/features/OpenFilterSlice";
 import FilterCategory from "./filterCategory/FilterCategory";
+import { setText } from "@/features/TakeNameSlice";
+import { useState } from "react";
 
 const Filter = (): JSX.Element => {
   const openFilter = useSelector(
@@ -15,6 +17,10 @@ const Filter = (): JSX.Element => {
   const mainClass = `${styles.filterMain} ${
     openFilter ? styles.filter : styles.deskFilter
   }`;
+
+  const text = useSelector((store: Rootstate) => store.text.text);
+  const [saveText, setSaveText] = useState<string>(" ");
+
   return (
     <form className={mainClass}>
       <div className={styles.FilterTopMain}>
@@ -31,6 +37,9 @@ const Filter = (): JSX.Element => {
 
         <div className={styles.inputDiv}>
           <input
+            onChange={(e) => {
+              dispatch(setText(e.target.value));
+            }}
             className={styles.inputName}
             type="text"
             placeholder="სახელით ძიება"
@@ -119,7 +128,14 @@ const Filter = (): JSX.Element => {
       </div>
       <FilterCategory />
       <div className={styles.buttonDiv}>
-        <button className={styles.submitButton} type="submit">
+        <button
+          className={styles.submitButton}
+          type="submit"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setSaveText(text);
+          }}
+        >
           ᲫᲘᲔᲑᲐ
         </button>
       </div>

@@ -4,7 +4,7 @@ import { BurgerProps } from "./OpenBurgerSilce";
 import InfoArraySlice, { InfoProps } from "./InfoArraySlice";
 import OpenFilterSlice, { FilterProps } from "./OpenFilterSlice";
 import CalculateAddSlice, { calculateProps } from "./CalculateAddSlice";
-import SaveNameSlice, { nameProps } from "./SaveNameSlice";
+import TakeNameSlice, { nameProps } from "./TakeNameSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,7 +12,7 @@ const store = configureStore({
     info: InfoArraySlice,
     openFilter: OpenFilterSlice,
     calculate: CalculateAddSlice,
-    text: SaveNameSlice,
+    text: TakeNameSlice,
   },
 });
 

@@ -8,7 +8,7 @@ const initialState: nameProps = {
   text: " ",
 };
 
-const SaveNameSlice = createSlice({
+const TakeNameSlice = createSlice({
   name: "text",
   initialState,
   reducers: {
@@ -18,5 +18,5 @@ const SaveNameSlice = createSlice({
   },
 });
 
-export const { setText } = SaveNameSlice.actions;
-export default SaveNameSlice.reducer;
+export const { setText } = TakeNameSlice.actions;
+export default TakeNameSlice.reducer;
