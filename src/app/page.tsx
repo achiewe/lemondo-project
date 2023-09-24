@@ -14,6 +14,7 @@ export default function Home() {
   const [shouldShowFilter, setShouldShowFilter] = useState(true);
 
   useEffect(() => {
+    // Add an event listener to track window resize
     function handleResize() {
       if (window.innerWidth >= 1024) {
         setShouldShowFilter(false);
