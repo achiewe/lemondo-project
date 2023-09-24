@@ -15,11 +15,7 @@ const Filter = (): JSX.Element => {
     openFilter ? styles.filter : styles.deskFilter
   }`;
   return (
-    <div
-      className={mainClass}
-
-      // style={{ display: openFilter ? "flex" : "none" }}
-    >
+    <div className={mainClass}>
       <div className={styles.FilterTopMain}>
         <div className={styles.titleFilterDiv}>
           <h3 className={styles.titleFilter}> ფილტრი</h3>

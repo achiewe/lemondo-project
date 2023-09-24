@@ -16,6 +16,12 @@
   flex-direction: column;
   gap: 40px;
 
+  @media (min-width: 1024px) {
+    display: flex;
+    width: 380px;
+    position: inherit;
+  }
+
   .FilterTopMain {
     display: flex;
     flex-direction: column;
@@ -371,6 +377,9 @@
     background-color: $White;
     box-shadow: 0px -3px 6px #00000014;
     opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .submitButton {
       width: 335px;
