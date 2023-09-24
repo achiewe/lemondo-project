@@ -70,7 +70,7 @@ const SortingInfo = (): JSX.Element => {
                     display: clickedItems.includes(item.id) ? "none" : "flex",
                   }}
                 >
-                  {item.amountDollar} $
+                  {item.amountDollar}
                 </span>
               </div>
               <button

@@ -1,32 +1,86 @@
 [
   {
     "id": 1,
-    "domain": "example.org.ge",
-    "monthlyAmount": "40 000",
-    "amountDollar": "14 285.7"
+    "domain": ".org.ge",
+    "category": "ბიზნესი",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
   },
   {
     "id": 2,
-    "domain": "example.com.ge",
-    "monthlyAmount": "40 000",
-    "amountDollar": "14 285.7"
+    "domain": "ge.ge",
+    "category": "უძრავი ქონება",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
   },
   {
     "id": 3,
-    "domain": "example.edu.ge",
-    "monthlyAmount": "40 000",
-    "amountDollar": "14 285.7"
+    "domain": ".org.ge",
+    "category": "ავტო",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
   },
   {
     "id": 4,
-    "domain": "example.net.ge",
-    "monthlyAmount": "40 000",
-    "amountDollar": "14 285.7"
+    "domain": "com.ge",
+    "category": "მედიცინა",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
   },
   {
     "id": 5,
-    "domain": "example.pvt.ge",
-    "monthlyAmount": "40 000",
-    "amountDollar": "14 285.7"
+    "domain": ".net.ge",
+    "category": "ტექნოლოგიები",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
+  },
+  {
+    "id": 6,
+    "domain": ".edu.ge",
+    "category": "თამაშები",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
+  },
+  {
+    "id": 7,
+    "domain": ".school.ge",
+    "category": "გართობა და დასვენება",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
+  },
+  {
+    "id": 8,
+    "domain": "ge.ge",
+    "category": "მედია",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
+  },
+  {
+    "id": 9,
+    "domain": ".edu.ge",
+    "category": "განათლება",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
+  },
+  {
+    "id": 10,
+    "domain": ".net.ge",
+    "category": "კომერცია",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
+  },
+  {
+    "id": 11,
+    "domain": ".school.ge",
+    "category": "ფინანსები",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
+  },
+  {
+    "id": 12,
+    "domain": ".com.ge",
+    "category": "ბიზნესი",
+    "monthlyAmount": "10 000",
+    "amountDollar": "14 285.7 $"
   }
 ]
