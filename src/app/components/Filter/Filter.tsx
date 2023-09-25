@@ -13,7 +13,7 @@ import { setInfo } from "@/features/InfoArraySlice";
 
 const Filter = (): JSX.Element => {
   const text = useSelector((store: Rootstate) => store.text.text);
-  // console.log("gaveshviiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" + " " + text);
+  console.log("gaveshviiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" + " " + text);
   const openFilter = useSelector(
     (store: Rootstate) => store.openFilter.openFilter
   );
@@ -35,30 +35,29 @@ const Filter = (): JSX.Element => {
   const [secPriceValue, setSecPriceValue] = useState<string>(" ");
 
   // const filterAll = (): Info[] => {
-  //   let filterData = info;
-  //   if (text.length > 0) {
-  //     filterData = filterData.filter((data) => {
-  //       return data.domain.toLowerCase().includes(text.toLowerCase());
+  //   let filterData: Info[] = [];
+  //   if (saveText.length > 0) {
+  //     filterData = info.filter((data) => {
+  //       console.log("asdasdasd");
+  //       return data?.domain?.toLowerCase().includes(saveText.toLowerCase());
   //     });
   //   }
 
   //   return filterData;
   // };
-  // const filterData = filterAll();
 
-  // console.log(filterData);
+  // console.log(filterAll());
 
   // useEffect(() => {
   //   dispatch(setInfo(filterData));
   // }, [filterData]);
 
-  // console.log(info, "dqwdqwdqwd");
+  console.log(info, "dqwdqwdqwd");
   return (
     <form
       className={mainClass}
       onSubmit={(e) => {
         e.preventDefault();
-
         dispatch(setText(saveText));
       }}
     >
@@ -113,6 +112,7 @@ const Filter = (): JSX.Element => {
                 <input
                   type="range"
                   className={styles.slider}
+                  defaultValue={0}
                   min="1"
                   max="50000"
                   onChange={(e) => {
@@ -122,6 +122,7 @@ const Filter = (): JSX.Element => {
                 <input
                   type="range"
                   className={styles.slider}
+                  defaultValue={50000}
                   min="1"
                   max="50000"
                   onChange={(e) => {
@@ -158,6 +159,7 @@ const Filter = (): JSX.Element => {
                 <input
                   type="range"
                   className={styles.sliderSec}
+                  defaultValue={0}
                   min="0"
                   max="26"
                   onChange={(e) => {
@@ -167,6 +169,7 @@ const Filter = (): JSX.Element => {
                 <input
                   type="range"
                   className={styles.sliderSec}
+                  defaultValue={26}
                   min="0"
                   max="26"
                   onChange={(e) => {
