@@ -3,7 +3,7 @@
 .mainError {
   display: none;
   @media (min-width: 1024px) {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 36px;
     align-items: center;
