@@ -13,7 +13,7 @@ import { setInfo } from "@/features/InfoArraySlice";
 
 const Filter = (): JSX.Element => {
   const text = useSelector((store: Rootstate) => store.text.text);
-  console.log("gaveshviiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" + " " + text);
+  // console.log("gaveshviiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" + " " + text);
   const openFilter = useSelector(
     (store: Rootstate) => store.openFilter.openFilter
   );
@@ -26,25 +26,25 @@ const Filter = (): JSX.Element => {
   const [saveText, setSaveText] = useState<string>(" ");
   const info = useSelector((store: Rootstate) => store.info.info);
 
-  const filterAll = (): Info[] => {
-    let filterData = info;
-    if (text.length > 0) {
-      filterData = filterData.filter((data) => {
-        return data.domain.toLowerCase().includes(text.toLowerCase());
-      });
-    }
+  // const filterAll = (): Info[] => {
+  //   let filterData = info;
+  //   if (text.length > 0) {
+  //     filterData = filterData.filter((data) => {
+  //       return data.domain.toLowerCase().includes(text.toLowerCase());
+  //     });
+  //   }
 
-    return filterData;
-  };
-  const filterData = filterAll();
+  //   return filterData;
+  // };
+  // const filterData = filterAll();
 
-  console.log(filterData);
+  // console.log(filterData);
 
   // useEffect(() => {
   //   dispatch(setInfo(filterData));
   // }, [filterData]);
 
-  console.log(info, "dqwdqwdqwd");
+  // console.log(info, "dqwdqwdqwd");
   return (
     <form
       className={mainClass}

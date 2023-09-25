@@ -1,168 +1,184 @@
 @import "../../colors.scss";
 
-.infoContainer {
-  background-color: $White;
+.ErrorInfoCont {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 24px 20px;
-  gap: 20px;
-
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
   @media (min-width: 1024px) {
     width: 866px;
-    padding: 30px 20px 54px 20px;
-    border-radius: 15px;
-    border: 1px solid $DarkGray;
   }
-  .mainInfo {
+
+  .infoContainer {
+    background-color: $White;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border-radius: 10px;
     width: 100%;
-    padding: 17px 16px 0px 21px;
-    cursor: pointer;
+    padding: 24px 20px;
+    gap: 20px;
 
     @media (min-width: 1024px) {
-      gap: 16px;
+      width: 600px;
+      padding: 30px 20px 54px 20px;
+      border-radius: 15px;
+      border: 1px solid $DarkGray;
     }
 
-    .infoDiv {
-      width: 100%;
+    @media (min-width: 1300px) {
+      width: 866px;
+    }
+    .mainInfo {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      border-radius: 10px;
+      width: 100%;
+      padding: 17px 16px 0px 21px;
+      cursor: pointer;
 
-      .contactInfo {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 15px;
-        @media (min-width: 1024px) {
-          gap: 20px;
-        }
-
-        .emailP {
-          text-align: left;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 40px;
-          font-family: "TKTMedium";
-          letter-spacing: 0px;
-          color: $DarkBlue;
-          opacity: 1;
-        }
+      @media (min-width: 1024px) {
+        gap: 16px;
       }
 
-      .sumBasketDiv {
+      .infoDiv {
+        width: 100%;
         display: flex;
         flex-direction: row;
-        gap: 15px;
+        justify-content: space-between;
         align-items: center;
-        @media (min-width: 1024px) {
-          gap: 21px;
-        }
 
-        .sumDiv {
+        .contactInfo {
           display: flex;
-          flex-direction: column;
-          width: 100%;
-          align-items: flex-end;
+          flex-direction: row;
+          align-items: center;
+          gap: 15px;
+          @media (min-width: 1024px) {
+            gap: 20px;
+          }
 
-          .sumText {
+          .emailP {
             text-align: left;
             font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 22px;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 40px;
             font-family: "TKTMedium";
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 2px;
             letter-spacing: 0px;
             color: $DarkBlue;
-          }
-
-          .sumSpan {
-            text-align: right;
-            font-size: 10px;
-            line-height: 10px;
-            font-style: normal;
-            font-weight: normal;
-            font-family: "TKTMedium";
-            letter-spacing: 0px;
-            color: $PitchBlackGray;
             opacity: 1;
           }
         }
 
-        .basketButton {
-          width: 36px;
-          height: 36px;
-          padding-right: 3px;
+        .sumBasketDiv {
           display: flex;
-          justify-content: center;
-          align-items: center;
           flex-direction: row;
-          gap: 7px;
-          background-color: $LightGreen;
-          padding: 0 15px;
-          border: none;
-          border-radius: 10px;
-          cursor: pointer;
+          gap: 15px;
+          align-items: center;
+          @media (min-width: 1024px) {
+            gap: 21px;
+          }
 
-          .basketP {
+          .sumDiv {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: flex-end;
+
+            .sumText {
+              text-align: left;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 14px;
+              line-height: 22px;
+              font-family: "TKTMedium";
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 2px;
+              letter-spacing: 0px;
+              color: $DarkBlue;
+            }
+
+            .sumSpan {
+              text-align: right;
+              font-size: 10px;
+              line-height: 10px;
+              font-style: normal;
+              font-weight: normal;
+              font-family: "TKTMedium";
+              letter-spacing: 0px;
+              color: $PitchBlackGray;
+              opacity: 1;
+            }
+          }
+
+          .basketButton {
+            width: 36px;
+            height: 36px;
+            padding-right: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 7px;
+            background-color: $LightGreen;
+            padding: 0 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+
+            .basketP {
+              text-align: left;
+              font-weight: normal;
+              font-style: normal;
+              font-size: 14px;
+              line-height: 40px;
+              font-family: "TKTRegular";
+              letter-spacing: 0px;
+              color: $White;
+              opacity: 1;
+            }
+          }
+
+          .basketButton:hover {
+            opacity: 0.6;
+          }
+
+          .InBasket {
+            display: flex;
+            width: 125px;
+            height: 36px;
+            justify-content: center;
+            border: none;
+            align-items: center;
+            flex-direction: row;
+            padding: 0 16px;
+            gap: 6px;
+            border-radius: 10px;
+            opacity: 1;
+            background-color: $MistyGrey;
             text-align: left;
-            font-weight: normal;
+            font-family: "TKTMedium";
             font-style: normal;
+            font-variant: normal;
+            font-weight: medium;
             font-size: 14px;
             line-height: 40px;
-            font-family: "TKTRegular";
             letter-spacing: 0px;
-            color: $White;
+            color: #696974;
             opacity: 1;
           }
         }
-
-        .basketButton:hover {
-          opacity: 0.6;
-        }
-
-        .InBasket {
-          display: flex;
-          width: 125px;
-          height: 36px;
-          justify-content: center;
-          border: none;
-          align-items: center;
-          flex-direction: row;
-          padding: 0 16px;
-          gap: 6px;
-          border-radius: 10px;
-          opacity: 1;
-          background-color: $MistyGrey;
-          text-align: left;
-          font-family: "TKTMedium";
-          font-style: normal;
-          font-variant: normal;
-          font-weight: medium;
-          font-size: 14px;
-          line-height: 40px;
-          letter-spacing: 0px;
-          color: #696974;
-          opacity: 1;
-        }
       }
-    }
 
-    .seperator {
-      border: none;
-      height: 1px;
-      background-color: $DarkGray;
-      width: 100%;
+      .seperator {
+        border: none;
+        height: 1px;
+        background-color: $DarkGray;
+        width: 100%;
+      }
     }
   }
 }
