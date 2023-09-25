@@ -26,6 +26,12 @@ const Filter = (): JSX.Element => {
   const [saveText, setSaveText] = useState<string>(" ");
   const info = useSelector((store: Rootstate) => store.info.info);
 
+  // for symbols input range
+  const [symbolsValue, setSymbolsValue] = useState<string>(" ");
+  const [secondSymbolValue, setSecondSymbolValue] = useState<string>(" ");
+
+  //for price input range
+
   // const filterAll = (): Info[] => {
   //   let filterData = info;
   //   if (text.length > 0) {
@@ -119,7 +125,7 @@ const Filter = (): JSX.Element => {
                   <input
                     className={styles.SymbolsFirstInp}
                     type="number"
-                    value={0}
+                    value={secondSymbolValue}
                   />
                 </div>
 
@@ -127,7 +133,7 @@ const Filter = (): JSX.Element => {
                   <input
                     className={styles.SymbolsSecInp}
                     type="number"
-                    value={0}
+                    value={symbolsValue}
                   />
                 </div>
               </div>
@@ -136,18 +142,20 @@ const Filter = (): JSX.Element => {
                 <input
                   type="range"
                   className={styles.sliderSec}
-                  min="1"
-                  max="50000"
-                  // onChange={(e) => {
-                  //   console.log("Min:", e.target.min);
-                  //   console.log("Max:", e.target.max);
-                  // }}
+                  min="0"
+                  max="26"
+                  onChange={(e) => {
+                    setSecondSymbolValue(e.target.value);
+                  }}
                 />
                 <input
                   type="range"
                   className={styles.sliderSec}
-                  min="50"
-                  max="100"
+                  min="0"
+                  max="26"
+                  onChange={(e) => {
+                    setSymbolsValue(e.target.value);
+                  }}
                 />
               </div>
             </div>
