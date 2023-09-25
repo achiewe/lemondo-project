@@ -10,12 +10,17 @@ import NavbarDesk from "./components/NavBarDesk/NavbarDesk";
 import SortingInfo from "./components/SortingInfo/SortingInfo";
 import { useEffect } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import data from "../../public/data.json";
 import { setInfo } from "@/features/InfoArraySlice";
+import { Rootstate } from "@/features/store";
+import React from "react";
 
 export default function Home() {
   const [shouldShowFilter, setShouldShowFilter] = useState(true);
+  const openFilter = useSelector(
+    (store: Rootstate) => store.openFilter.openFilter
+  );
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setInfo(data));
@@ -49,7 +54,7 @@ export default function Home() {
       <Sorting />
       {shouldShowFilter && <Filter />}
       <div className={styles.SortingFiltDiv}>
-        <Filter />
+        {openFilter ? shouldShowFilter : <Filter />}
         <SortingInfo />
       </div>
     </main>

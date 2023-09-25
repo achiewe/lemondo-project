@@ -50,9 +50,6 @@ const Sorting = (): JSX.Element => {
       }
     });
 
-    // Update sortOrder if needed
-    // setSortOrder(newSortOrder);
-
     return sortedData;
   };
 
@@ -94,7 +91,7 @@ const Sorting = (): JSX.Element => {
           <div className={styles.sortingList}>
             <h3 className={styles.sortTiTle}>სორტირება: </h3>
             <h4 className={styles.sortMarkCat}>
-              დამატების თარიღით{" "}
+              დამატების თარიღით
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
