@@ -11,7 +11,7 @@ import arrowDeskSvg from "../../../../public/assets/arrowHeadDesk.svg";
 import flagSvg from "../../../../public/assets/flagDesk.svg";
 import symbolDeskSvg from "../../../../public/assets/SymbolDesk.svg";
 import Image from "next/image";
-import { setOpenBurger } from "@/features/OpenBurgerSilce";
+import { setOpenBurger } from "@/features/OpenBurgerSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Rootstate } from "@/features/store";
 

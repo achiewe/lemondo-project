@@ -5,7 +5,7 @@ export interface nameProps {
 }
 
 const initialState: nameProps = {
-  text: " ",
+  text: "",
 };
 
 const TakeNameSlice = createSlice({

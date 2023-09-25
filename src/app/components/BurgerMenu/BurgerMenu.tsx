@@ -2,7 +2,7 @@ import styles from "./BurgerMenu.module.scss";
 import Navbar from "../NavBar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { Rootstate } from "@/features/store";
-import { setOpenBurger } from "@/features/OpenBurgerSilce";
+import { setOpenBurger } from "@/features/OpenBurgerSlice";
 
 const BurgerMenu = (): JSX.Element => {
   const openBurger = useSelector(

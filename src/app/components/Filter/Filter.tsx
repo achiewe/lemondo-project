@@ -10,10 +10,11 @@ import { setText } from "@/features/TakeNameSlice";
 import { useEffect } from "react";
 import { useState } from "react";
 import { setInfo } from "@/features/InfoArraySlice";
+import { setFilteredData } from "@/features/FilteredInfoSlice";
 
 const Filter = (): JSX.Element => {
   const text = useSelector((store: Rootstate) => store.text.text);
-  console.log("gaveshviiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" + " " + text);
+  // console.log("gaveshviiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" + " " + text);
   const openFilter = useSelector(
     (store: Rootstate) => store.openFilter.openFilter
   );
@@ -23,42 +24,49 @@ const Filter = (): JSX.Element => {
     openFilter ? styles.filter : styles.deskFilter
   }`;
 
-  const [saveText, setSaveText] = useState<string>(" ");
+  const [filtered, setFiltered] = useState<number>(0);
+  const [saveText, setSaveText] = useState<string>("");
   const info = useSelector((store: Rootstate) => store.info.info);
 
   // for symbols input range
-  const [symbolsValue, setSymbolsValue] = useState<string>(" ");
-  const [secondSymbolValue, setSecondSymbolValue] = useState<string>(" ");
+  const [symbolsValue, setSymbolsValue] = useState<string>("26");
+  const [secondSymbolValue, setSecondSymbolValue] = useState<string>("1");
 
   //for price input range
-  const [priceValue, setPriceValue] = useState<string>(" ");
-  const [secPriceValue, setSecPriceValue] = useState<string>(" ");
+  const [priceValue, setPriceValue] = useState<string>("1");
+  const [secPriceValue, setSecPriceValue] = useState<string>("100");
+  const filteredData = useSelector(
+    (store: Rootstate) => store.filtered.filtered
+  );
 
-  // const filterAll = (): Info[] => {
-  //   let filterData: Info[] = [];
-  //   if (saveText.length > 0) {
-  //     filterData = info.filter((data) => {
-  //       console.log("asdasdasd");
-  //       return data?.domain?.toLowerCase().includes(saveText.toLowerCase());
-  //     });
-  //   }
+  const filterAll = (text: string): Info[] => {
+    let filterData: Info[] = [];
+    if (text.length > 0) {
+      filterData = info.filter((data) => {
+        // console.log("asdasdasd");
+        return data?.domain?.toLowerCase().includes(text.toLowerCase());
+      });
+    }
 
-  //   return filterData;
-  // };
+    return filterData;
+  };
 
-  // console.log(filterAll());
+  // Usage
+  // const text = "example";
+  const filterData = filterAll(text);
+  // console.log(filterData);
 
   // useEffect(() => {
-  //   dispatch(setInfo(filterData));
-  // }, [filterData]);
 
-  console.log(info, "dqwdqwdqwd");
+  // }, [filtered]);
+
+  console.log(filteredData);
+  // console.log(info, "dqwdqwdqwd");
   return (
     <form
       className={mainClass}
       onSubmit={(e) => {
         e.preventDefault();
-        dispatch(setText(saveText));
       }}
     >
       <div className={styles.FilterTopMain}>
@@ -77,6 +85,10 @@ const Filter = (): JSX.Element => {
           <input
             onChange={(e) => {
               setSaveText(e.target.value);
+              dispatch(setText(saveText));
+              setFiltered(filtered + 1);
+              const ragaca = filterAll(e.target.value);
+              dispatch(setFilteredData(filterData));
             }}
             className={styles.inputName}
             type="text"
@@ -114,7 +126,7 @@ const Filter = (): JSX.Element => {
                   className={styles.slider}
                   defaultValue={0}
                   min="1"
-                  max="50000"
+                  max="100"
                   onChange={(e) => {
                     setPriceValue(e.target.value);
                   }}
@@ -122,9 +134,9 @@ const Filter = (): JSX.Element => {
                 <input
                   type="range"
                   className={styles.slider}
-                  defaultValue={50000}
+                  defaultValue={100}
                   min="1"
-                  max="50000"
+                  max="100"
                   onChange={(e) => {
                     setSecPriceValue(e.target.value);
                   }}
@@ -159,8 +171,8 @@ const Filter = (): JSX.Element => {
                 <input
                   type="range"
                   className={styles.sliderSec}
-                  defaultValue={0}
-                  min="0"
+                  defaultValue={1}
+                  min="1"
                   max="26"
                   onChange={(e) => {
                     setSecondSymbolValue(e.target.value);
@@ -170,7 +182,7 @@ const Filter = (): JSX.Element => {
                   type="range"
                   className={styles.sliderSec}
                   defaultValue={26}
-                  min="0"
+                  min="1"
                   max="26"
                   onChange={(e) => {
                     setSymbolsValue(e.target.value);
