@@ -3,11 +3,34 @@ import sortSvg from "../../../../public/assets/adjustment-svgrepo-com.svg";
 import arrowSvg from "../../../../public/assets/Dropdown - 2.svg";
 import Image from "next/image";
 import SortingInfo from "../SortingInfo/SortingInfo";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setOpenFilter } from "@/features/OpenFilterSlice";
+import { useState } from "react";
+import { Info } from "../../../../type";
+import { Rootstate } from "@/features/store";
+import { setInfo } from "@/features/InfoArraySlice";
+import { setFilteredData } from "@/features/FilteredInfoSlice";
 
 const Sorting = (): JSX.Element => {
   const dispatch = useDispatch();
+  const filteredData = useSelector(
+    (store: Rootstate) => store.filtered.filtered
+  );
+  const info = useSelector((store: Rootstate) => store.info.info);
+
+  const handleSort = () => {
+    const sortedData = [...info]; // Create a copy of the fetched data
+    sortedData.sort((a, b) => {
+      const monthlyAmountA = parseFloat(a.monthlyAmount);
+      const monthlyAmountB = parseFloat(b.monthlyAmount);
+
+      return monthlyAmountA - monthlyAmountB;
+    });
+
+    // Dispatch the sorted data to the Redux store
+    dispatch(setInfo(sortedData));
+  };
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.MainSorting}>
@@ -50,7 +73,9 @@ const Sorting = (): JSX.Element => {
               </svg>
             </h4>
             <h4 className={styles.sortCat}>ვადის ამოწურვით </h4>
-            <h4 className={styles.sortCat}>ფასით </h4>
+            <button className={styles.sortCat} onClick={handleSort}>
+              ფასით
+            </button>
             <h4 className={styles.sortCat}>ანბანით </h4>
           </div>
         </div>
