@@ -2,14 +2,12 @@ import styles from "./sorting.module.scss";
 import sortSvg from "../../../../public/assets/adjustment-svgrepo-com.svg";
 import arrowSvg from "../../../../public/assets/Dropdown - 2.svg";
 import Image from "next/image";
-import SortingInfo from "../SortingInfo/SortingInfo";
 import { useDispatch, useSelector } from "react-redux";
 import { setOpenFilter } from "@/features/OpenFilterSlice";
-import { useState } from "react";
-import { Info } from "../../../../type";
 import { Rootstate } from "@/features/store";
 import { setInfo } from "@/features/InfoArraySlice";
-import { setFilteredData } from "@/features/FilteredInfoSlice";
+import { Info } from "../../../../type";
+import { useState } from "react";
 
 const Sorting = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -17,6 +15,7 @@ const Sorting = (): JSX.Element => {
     (store: Rootstate) => store.filtered.filtered
   );
   const info = useSelector((store: Rootstate) => store.info.info);
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
   const handleSort = () => {
     const sortedData = [...info]; // Create a copy of the fetched data
@@ -29,6 +28,30 @@ const Sorting = (): JSX.Element => {
 
     // Dispatch the sorted data to the Redux store
     dispatch(setInfo(sortedData));
+  };
+
+  const sortByDomain = () => {
+    const sortedData = [...info]; // Create a copy of the data
+
+    sortedData.sort((a, b) => {
+      const domainA = a.domain.toLowerCase(); // Convert to lowercase for case-insensitive sorting
+      const domainB = b.domain.toLowerCase();
+
+      if (sortOrder === "asc") {
+        if (domainA < domainB) return -1;
+        if (domainA > domainB) return 1;
+        return 0;
+      } else {
+        if (domainA < domainB) return 1;
+        if (domainA > domainB) return -1;
+        return 0;
+      }
+    });
+
+    // Update sortOrder if needed
+    // setSortOrder(newSortOrder);
+
+    return sortedData;
   };
 
   return (
@@ -76,7 +99,15 @@ const Sorting = (): JSX.Element => {
             <button className={styles.sortCat} onClick={handleSort}>
               ფასით
             </button>
-            <h4 className={styles.sortCat}>ანბანით </h4>
+            <button
+              className={styles.sortCat}
+              onClick={() => {
+                const sortedData = sortByDomain(); // Call the sorting function
+                dispatch(setInfo(sortedData)); // Dispatch the sorted data to Redux store
+              }}
+            >
+              ანბანით
+            </button>
           </div>
         </div>
         <a className={styles.href} href="#">

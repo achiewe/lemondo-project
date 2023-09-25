@@ -1,84 +1,84 @@
 [
   {
     "id": 1,
-    "domain": "exampleბიზნესი.org.ge",
+    "domain": "Ainhoaბიზნესი.org.ge",
     "category": "ბიზნესი",
     "monthlyAmount": "100",
     "amountDollar": " 37.18$"
   },
   {
     "id": 2,
-    "domain": "exampleუძრავიქონება.ge.ge",
+    "domain": "Clydeუძრავიქონება.ge.ge",
     "category": "უძრავი ქონება",
     "monthlyAmount": "70",
     "amountDollar": "26$"
   },
   {
     "id": 3,
-    "domain": "exampleავტო.org.ge",
+    "domain": "Dukeავტო.org.ge",
     "category": "ავტო",
     "monthlyAmount": "100",
     "amountDollar": "37.18$"
   },
   {
     "id": 4,
-    "domain": "exampleმედიცინა.com.ge",
+    "domain": "Avaმედიცინა.com.ge",
     "category": "მედიცინა",
     "monthlyAmount": "80",
     "amountDollar": "29.75$"
   },
   {
     "id": 5,
-    "domain": "exampleტექნოლოგიები.net.ge",
+    "domain": "Hopeტექნოლოგიები.net.ge",
     "category": "ტექნოლოგიები",
     "monthlyAmount": "40",
     "amountDollar": "14.87$"
   },
   {
     "id": 6,
-    "domain": "exampleთამაშები.edu.ge",
+    "domain": "Amirთამაშები.edu.ge",
     "category": "თამაშები",
     "monthlyAmount": "30",
     "amountDollar": "11.15$"
   },
   {
     "id": 7,
-    "domain": "exampleგართობა-და-დასვენება.school.ge",
+    "domain": "Eveგართობა-და-დასვენება.school.ge",
     "category": "გართობა და დასვენება",
     "monthlyAmount": "60",
     "amountDollar": "22.31$"
   },
   {
     "id": 8,
-    "domain": "exampleმედია.ge.ge",
+    "domain": "Tateმედია.ge.ge",
     "category": "მედია",
     "monthlyAmount": "70",
     "amountDollar": "26$"
   },
   {
     "id": 9,
-    "domain": "exampleგანათლება.edu.ge",
+    "domain": "Jairგანათლება.edu.ge",
     "category": "განათლება",
     "monthlyAmount": "30",
     "amountDollar": "11.15$"
   },
   {
     "id": 10,
-    "domain": "exampleკომერცია.net.ge",
+    "domain": "Islaკომერცია.net.ge",
     "category": "კომერცია",
     "monthlyAmount": "40",
     "amountDollar": "14.87$"
   },
   {
     "id": 11,
-    "domain": "exampleფინანსები.school.ge",
+    "domain": "Koaფინანსები.school.ge",
     "category": "ფინანსები",
     "monthlyAmount": "60",
     "amountDollar": "22.31$"
   },
   {
     "id": 12,
-    "domain": "exampleბიზნესი.com.ge",
+    "domain": "Liaბიზნესი.com.ge",
     "category": "ბიზნესი",
     "monthlyAmount": "80",
     "amountDollar": "29.75$"
