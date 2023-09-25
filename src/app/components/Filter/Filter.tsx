@@ -31,6 +31,8 @@ const Filter = (): JSX.Element => {
   const [secondSymbolValue, setSecondSymbolValue] = useState<string>(" ");
 
   //for price input range
+  const [priceValue, setPriceValue] = useState<string>(" ");
+  const [secPriceValue, setSecPriceValue] = useState<string>(" ");
 
   // const filterAll = (): Info[] => {
   //   let filterData = info;
@@ -91,11 +93,19 @@ const Filter = (): JSX.Element => {
 
               <div className={styles.priceInputDiv}>
                 <div className={styles.inputOverlay}>
-                  <input className={styles.firstInput} type="number" />
+                  <input
+                    className={styles.firstInput}
+                    type="number"
+                    value={priceValue}
+                  />
                 </div>
 
                 <div className={styles.secondInputOverlay}>
-                  <input className={styles.secondInput} type="number" />
+                  <input
+                    className={styles.secondInput}
+                    type="number"
+                    value={secPriceValue}
+                  />
                 </div>
               </div>
 
@@ -103,14 +113,20 @@ const Filter = (): JSX.Element => {
                 <input
                   type="range"
                   className={styles.slider}
-                  min="0"
-                  max="50"
+                  min="1"
+                  max="50000"
+                  onChange={(e) => {
+                    setPriceValue(e.target.value);
+                  }}
                 />
                 <input
                   type="range"
                   className={styles.slider}
-                  min="50"
-                  max="100"
+                  min="1"
+                  max="50000"
+                  onChange={(e) => {
+                    setSecPriceValue(e.target.value);
+                  }}
                 />
               </div>
             </div>
