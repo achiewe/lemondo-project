@@ -17,6 +17,8 @@ const Sorting = (): JSX.Element => {
   const info = useSelector((store: Rootstate) => store.info.info);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
+  const [openSort, setOpenSort] = useState<boolean>(false);
+
   const handleSort = () => {
     const sortedData = [...info]; // Create a copy of the fetched data
     sortedData.sort((a, b) => {
@@ -69,10 +71,22 @@ const Sorting = (): JSX.Element => {
         </div>
         <div className={styles.filterSorting}>
           <h4 className={styles.sortingTitle}>სორტირება </h4>
-          <Image src={arrowSvg} alt="sort image" />
+          <Image
+            src={arrowSvg}
+            alt="sort image"
+            onClick={() => {
+              setOpenSort(!openSort);
+            }}
+          />
         </div>
       </div>
-      <div className={styles.sortingDesk}>
+      <div
+        className={styles.sortingDesk}
+        style={{
+          display:
+            window.innerWidth >= 1024 ? "flex" : openSort ? "flex" : "none",
+        }}
+      >
         <div className={styles.sortingleftSide}>
           <p className={styles.countDomain}>
             დომენები მარკეტზე: <span className={styles.countSpan}>703 </span>
