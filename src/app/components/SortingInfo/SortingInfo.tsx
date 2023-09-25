@@ -19,24 +19,19 @@ const SortingInfo = (): JSX.Element => {
   const calculate = useSelector(
     (store: Rootstate) => store.calculate.calculate
   );
+
+  const filteredData = useSelector(
+    (store: Rootstate) => store.filtered.filtered
+  );
   const dispatch = useDispatch();
 
   const [clickedItems, setClickedItems] = useState<number[]>([]);
   const [clickDiv, setclickDiv] = useState<number | null>(null);
 
-  // useEffect(() => {
-  //   const requesData = async () => {
-  //     const response = await axios.get("/data.json");
-  //     const data = response.data;
-  //     dispatch(setInfo(data));
-  //   };
-  //   requesData();
-  // }, []);
-
   return (
     <div className={styles.ErrorInfoCont}>
       <div className={styles.infoContainer}>
-        {info.map((item) => (
+        {(filteredData.length > 0 ? filteredData : info).map((item) => (
           <div
             className={styles.mainInfo}
             key={item.id}

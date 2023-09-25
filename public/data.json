@@ -3,84 +3,84 @@
     "id": 1,
     "domain": "exampleბიზნესი.org.ge",
     "category": "ბიზნესი",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "100",
+    "amountDollar": " 37.18$"
   },
   {
     "id": 2,
     "domain": "exampleუძრავიქონება.ge.ge",
     "category": "უძრავი ქონება",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "70",
+    "amountDollar": "26$"
   },
   {
     "id": 3,
     "domain": "exampleავტო.org.ge",
     "category": "ავტო",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "100",
+    "amountDollar": "37.18$"
   },
   {
     "id": 4,
     "domain": "exampleმედიცინა.com.ge",
     "category": "მედიცინა",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "80",
+    "amountDollar": "29.75$"
   },
   {
     "id": 5,
     "domain": "exampleტექნოლოგიები.net.ge",
     "category": "ტექნოლოგიები",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "40",
+    "amountDollar": "14.87$"
   },
   {
     "id": 6,
     "domain": "exampleთამაშები.edu.ge",
     "category": "თამაშები",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "30",
+    "amountDollar": "11.15$"
   },
   {
     "id": 7,
     "domain": "exampleგართობა-და-დასვენება.school.ge",
     "category": "გართობა და დასვენება",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "60",
+    "amountDollar": "22.31$"
   },
   {
     "id": 8,
     "domain": "exampleმედია.ge.ge",
     "category": "მედია",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "70",
+    "amountDollar": "26$"
   },
   {
     "id": 9,
     "domain": "exampleგანათლება.edu.ge",
     "category": "განათლება",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "30",
+    "amountDollar": "11.15$"
   },
   {
     "id": 10,
     "domain": "exampleკომერცია.net.ge",
     "category": "კომერცია",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "40",
+    "amountDollar": "14.87$"
   },
   {
     "id": 11,
     "domain": "exampleფინანსები.school.ge",
     "category": "ფინანსები",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "60",
+    "amountDollar": "22.31$"
   },
   {
     "id": 12,
     "domain": "exampleბიზნესი.com.ge",
     "category": "ბიზნესი",
-    "monthlyAmount": "10 000",
-    "amountDollar": "14 285.7 $"
+    "monthlyAmount": "80",
+    "amountDollar": "29.75$"
   }
 ]

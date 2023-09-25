@@ -14,7 +14,7 @@ import { setFilteredData } from "@/features/FilteredInfoSlice";
 
 const Filter = (): JSX.Element => {
   const text = useSelector((store: Rootstate) => store.text.text);
-  // console.log("gaveshviiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" + " " + text);
+
   const openFilter = useSelector(
     (store: Rootstate) => store.openFilter.openFilter
   );
@@ -24,9 +24,31 @@ const Filter = (): JSX.Element => {
     openFilter ? styles.filter : styles.deskFilter
   }`;
 
-  const [filtered, setFiltered] = useState<number>(0);
-  const [saveText, setSaveText] = useState<string>("");
   const info = useSelector((store: Rootstate) => store.info.info);
+
+  // State variables to track checked checkboxes
+  const [categoryCheckboxes, setCategoryCheckboxes] = useState({
+    business: false,
+    realEstate: false,
+    auto: false,
+    entertainment: false,
+    eduaction: false,
+    medicine: false,
+    games: false,
+    finance: false,
+    commerce: false,
+    technologies: false,
+    media: false,
+  });
+
+  const [zoneCheckboxes, setZoneCheckboxes] = useState({
+    ge: false,
+    comGe: false,
+    netGe: false,
+    orgGe: false,
+    schoolGe: false,
+    eduGe: false,
+  });
 
   // for symbols input range
   const [symbolsValue, setSymbolsValue] = useState<string>("26");
@@ -39,36 +61,100 @@ const Filter = (): JSX.Element => {
     (store: Rootstate) => store.filtered.filtered
   );
 
-  const filterAll = (text: string): Info[] => {
-    let filterData: Info[] = [];
-    if (text.length > 0) {
-      filterData = info.filter((data) => {
-        // console.log("asdasdasd");
-        return data?.domain?.toLowerCase().includes(text.toLowerCase());
-      });
+  const [inputValue, setInputValue] = useState<string>("");
+
+  const handleFormSubmit = (e: any) => {
+    e.preventDefault();
+
+    // Convert the price range values to numbers
+    const minPrice = parseFloat(priceValue);
+    const maxPrice = parseFloat(secPriceValue);
+
+    // Convert the symbol range values to numbers
+    const minSymbols = parseInt(secondSymbolValue);
+    const maxSymbols = parseInt(symbolsValue);
+
+    // Create an array to store selected endings
+    const selectedEndings: string[] = [];
+
+    // Define the endings for each property in zoneCheckboxes
+    const endingMap: { [key: string]: string } = {
+      ge: ".ge",
+      comGe: ".com.ge",
+      netGe: ".net.ge",
+      orgGe: ".org.ge",
+      schoolGe: ".school.ge",
+      eduGe: ".edu.ge",
+    };
+
+    // Check each property within zoneCheckboxes
+    for (const ending in zoneCheckboxes) {
+      if (zoneCheckboxes[ending as keyof typeof zoneCheckboxes]) {
+        // If the property is true, add the corresponding ending to selectedEndings
+        selectedEndings.push(endingMap[ending]);
+      }
     }
 
-    return filterData;
+    const selectedCategories: string[] = [];
+
+    // Define the categories for each property in categoryCheckboxes
+    const categoryMap: { [key: string]: string } = {
+      business: "ბიზნესი",
+      realEstate: "უძრავი ქონება",
+      auto: "ავტო",
+      entertainment: "გართობა და დასვენება",
+      eduaction: "განათლება",
+      medicine: "მედიცინა",
+      games: "თამაშები",
+      finance: "ფინანსები",
+      commerce: "კომერცია",
+      technologies: "ტექნოლოგიები",
+      media: "მედია",
+    };
+
+    for (const category in categoryCheckboxes) {
+      if (categoryCheckboxes[category as keyof typeof categoryCheckboxes]) {
+        // If the property is true, add the corresponding category to selectedCategories
+        selectedCategories.push(categoryMap[category]);
+      }
+    }
+
+    // Filter the 'info' state based on name, price, and symbols range
+    console.log("Selected Categories: ", selectedCategories);
+    const filteredData = info.filter((item) => {
+      const itemPrice = parseFloat(item.monthlyAmount);
+      const itemSymbols = item.domain.length; // Calculate the number of characters in the domain
+
+      // Check if item.domain ends with any of the selected endings
+      const endingCheck = selectedEndings.some((ending) =>
+        item.domain.endsWith(ending)
+      );
+
+      console.log(endingCheck, "me end");
+
+      const checkedCategory = selectedCategories.some((selectedCat) =>
+        selectedCat.match(item.category)
+      );
+
+      console.log(checkedCategory, "mevar");
+
+      return (
+        item.domain.includes(inputValue) &&
+        !isNaN(itemPrice) && // Check if item.price is a valid number
+        itemPrice >= minPrice &&
+        itemPrice <= maxPrice &&
+        itemSymbols >= minSymbols &&
+        itemSymbols <= maxSymbols &&
+        endingCheck
+      );
+    });
+
+    // Dispatch an action to update the 'filteredData' state
+    dispatch(setFilteredData(filteredData));
   };
 
-  // Usage
-  // const text = "example";
-  const filterData = filterAll(text);
-  // console.log(filterData);
-
-  // useEffect(() => {
-
-  // }, [filtered]);
-
-  console.log(filteredData);
-  // console.log(info, "dqwdqwdqwd");
   return (
-    <form
-      className={mainClass}
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
-    >
+    <form className={mainClass} onSubmit={handleFormSubmit}>
       <div className={styles.FilterTopMain}>
         <div className={styles.titleFilterDiv}>
           <h3 className={styles.titleFilter}> ფილტრი</h3>
@@ -83,17 +169,11 @@ const Filter = (): JSX.Element => {
 
         <div className={styles.inputDiv}>
           <input
-            onChange={(e) => {
-              setSaveText(e.target.value);
-              dispatch(setText(saveText));
-              setFiltered(filtered + 1);
-              const ragaca = filterAll(e.target.value);
-              dispatch(setFilteredData(filterData));
-            }}
             className={styles.inputName}
             type="text"
             placeholder="სახელით ძიება"
-            value={saveText}
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
           />
         </div>
 
@@ -193,7 +273,12 @@ const Filter = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <FilterCategory />
+      <FilterCategory
+        categoryCheckboxes={categoryCheckboxes}
+        setCategoryCheckboxes={setCategoryCheckboxes}
+        zoneCheckboxes={zoneCheckboxes}
+        setZoneCheckboxes={setZoneCheckboxes}
+      />
       <div className={styles.buttonDiv}>
         <button className={styles.submitButton} type="submit">
           ᲫᲘᲔᲑᲐ
