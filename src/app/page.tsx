@@ -25,26 +25,28 @@ export default function Home() {
   useEffect(() => {
     dispatch(setInfo(data));
 
-    function handleResize() {
-      if (window.innerWidth >= 1024) {
-        setShouldShowFilter(false);
-      } else {
-        setShouldShowFilter(true);
-      }
+    if (typeof window !== "undefined") {
+      // Client-side code that uses `window` object
+      const handleResize = () => {
+        if (window.innerWidth >= 1024) {
+          setShouldShowFilter(false);
+        } else {
+          setShouldShowFilter(true);
+        }
+      };
+
+      // Initial check
+      handleResize();
+
+      // Add the event listener
+      window.addEventListener("resize", handleResize);
+
+      // Clean up the event listener when the component unmounts
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
     }
-
-    // Initial check
-    handleResize();
-
-    // Add the event listener
-    window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, []);
-
   return (
     <main className={styles.MainPage}>
       <Header />
