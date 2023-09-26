@@ -9,7 +9,6 @@ import Filter from "./components/Filter/Filter";
 import NavbarDesk from "./components/NavBarDesk/NavbarDesk";
 import SortingInfo from "./components/SortingInfo/SortingInfo";
 import { useEffect } from "react";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import data from "../../public/data.json";
 import { setInfo } from "@/features/InfoArraySlice";

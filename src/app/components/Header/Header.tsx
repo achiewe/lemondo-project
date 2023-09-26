@@ -42,9 +42,6 @@ const Header = (): JSX.Element => {
             className={styles.symbolSvg}
             src={symbolDeskSvg}
             alt="site url image"
-            onClick={() => {
-              window.location.reload();
-            }}
           />
         </div>
         <div className={styles.userActions}>
