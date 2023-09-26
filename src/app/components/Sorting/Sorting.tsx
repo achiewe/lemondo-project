@@ -8,6 +8,7 @@ import { Rootstate } from "@/features/store";
 import { setInfo } from "@/features/InfoArraySlice";
 import { Info } from "../../../../type";
 import { useState } from "react";
+import { setFilteredData } from "@/features/FilteredInfoSlice";
 
 const Sorting = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -20,7 +21,9 @@ const Sorting = (): JSX.Element => {
   const [openSort, setOpenSort] = useState<boolean>(false);
 
   const handleSort = () => {
-    const sortedData = [...info]; // Create a copy of the fetched data
+    const dataToSort = filteredData.length > 0 ? filteredData : info;
+    const sortedData = [...dataToSort]; // Create a copy of the fetched data
+
     sortedData.sort((a, b) => {
       const monthlyAmountA = parseFloat(a.monthlyAmount);
       const monthlyAmountB = parseFloat(b.monthlyAmount);
@@ -28,25 +31,26 @@ const Sorting = (): JSX.Element => {
       return monthlyAmountA - monthlyAmountB;
     });
 
+    console.log(dataToSort);
+
     // Dispatch the sorted data to the Redux store
-    dispatch(setInfo(sortedData));
+    filteredData.length > 0
+      ? dispatch(setFilteredData(sortedData))
+      : dispatch(setInfo(sortedData));
   };
 
   const sortByDomain = () => {
-    const sortedData = [...info]; // Create a copy of the data
+    const dataToSort = filteredData.length > 0 ? [...filteredData] : [...info];
+    const sortedData = [...dataToSort]; // Create a copy of the data
 
     sortedData.sort((a, b) => {
       const domainA = a.domain.toLowerCase(); // Convert to lowercase for case-insensitive sorting
       const domainB = b.domain.toLowerCase();
 
       if (sortOrder === "asc") {
-        if (domainA < domainB) return -1;
-        if (domainA > domainB) return 1;
-        return 0;
+        return domainA.localeCompare(domainB);
       } else {
-        if (domainA < domainB) return 1;
-        if (domainA > domainB) return -1;
-        return 0;
+        return domainB.localeCompare(domainA);
       }
     });
 
@@ -114,7 +118,9 @@ const Sorting = (): JSX.Element => {
               className={styles.sortCat}
               onClick={() => {
                 const sortedData = sortByDomain(); // Call the sorting function
-                dispatch(setInfo(sortedData)); // Dispatch the sorted data to Redux store
+                filteredData.length > 0
+                  ? dispatch(setFilteredData(sortedData))
+                  : dispatch(setInfo(sortedData));
               }}
             >
               ანბანით

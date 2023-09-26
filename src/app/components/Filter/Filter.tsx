@@ -5,11 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Rootstate } from "@/features/store";
 import { setOpenFilter } from "@/features/OpenFilterSlice";
 import FilterCategory from "./filterCategory/FilterCategory";
-import { Info } from "../../../../type";
-import { setText } from "@/features/TakeNameSlice";
-import { useEffect } from "react";
 import { useState } from "react";
-import { setInfo } from "@/features/InfoArraySlice";
 import { setFilteredData } from "@/features/FilteredInfoSlice";
 
 const Filter = (): JSX.Element => {
@@ -99,17 +95,17 @@ const Filter = (): JSX.Element => {
 
     // Define the categories for each property in categoryCheckboxes
     const categoryMap: { [key: string]: string } = {
-      business: "ბიზნესი",
-      realEstate: "უძრავი ქონება",
-      auto: "ავტო",
-      entertainment: "გართობა და დასვენება",
-      eduaction: "განათლება",
-      medicine: "მედიცინა",
-      games: "თამაშები",
-      finance: "ფინანსები",
-      commerce: "კომერცია",
-      technologies: "ტექნოლოგიები",
-      media: "მედია",
+      business: "business",
+      realEstate: "realEstate",
+      auto: "auto",
+      entertainment: "entertainment",
+      eduaction: "eduaction",
+      medicine: "medicine",
+      games: "games",
+      finance: "finance",
+      commerce: "commerce",
+      technologies: "technologies",
+      media: "media",
     };
 
     for (const category in categoryCheckboxes) {
@@ -130,13 +126,9 @@ const Filter = (): JSX.Element => {
         item.domain.endsWith(ending)
       );
 
-      console.log(endingCheck, "me end");
+      const categoryCheck = selectedCategories.includes(item.category);
 
-      const checkedCategory = selectedCategories.some((selectedCat) =>
-        selectedCat.match(item.category)
-      );
-
-      console.log(checkedCategory, "mevar");
+      console.log(categoryCheck, "mevar");
 
       return (
         item.domain.includes(inputValue) &&

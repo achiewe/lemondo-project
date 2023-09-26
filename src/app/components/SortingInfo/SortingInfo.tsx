@@ -7,12 +7,9 @@ import sendSvgFoc from "../../../../public/assets/btn_arrowDown.svg";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { Rootstate } from "@/features/store";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { setInfo } from "@/features/InfoArraySlice";
-
-import { setCalculate } from "@/features/CalculateAddSlice";
+import { useState } from "react";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import { setCalculate } from "@/features/CalculateAddSlice";
 
 const SortingInfo = (): JSX.Element => {
   const info = useSelector((store: Rootstate) => store.info.info);

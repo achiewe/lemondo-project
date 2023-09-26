@@ -1,9 +1,8 @@
 @import "../../colors.scss";
 
 .mainError {
-  display: none;
+  display: flex;
   @media (min-width: 1024px) {
-    display: none;
     flex-direction: column;
     gap: 36px;
     align-items: center;

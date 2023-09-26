@@ -4,83 +4,95 @@
     "domain": "Ainhoaბიზნესი.org.ge",
     "category": "ბიზნესი",
     "monthlyAmount": "100",
-    "amountDollar": " 37.18$"
+    "amountDollar": " 37.18$",
+    "class": "buisness"
   },
   {
     "id": 2,
-    "domain": "Clydeუძრავიქონება.ge.ge",
+    "domain": "Clydeქონება.ge.ge",
     "category": "უძრავი ქონება",
     "monthlyAmount": "70",
-    "amountDollar": "26$"
+    "amountDollar": "26$",
+    "class": "real estate"
   },
   {
     "id": 3,
     "domain": "Dukeავტო.org.ge",
     "category": "ავტო",
     "monthlyAmount": "100",
-    "amountDollar": "37.18$"
+    "amountDollar": "37.18$",
+    "class": "auto"
   },
   {
     "id": 4,
     "domain": "Avaმედიცინა.com.ge",
     "category": "მედიცინა",
     "monthlyAmount": "80",
-    "amountDollar": "29.75$"
+    "amountDollar": "29.75$",
+    "class": "medicine"
   },
   {
     "id": 5,
-    "domain": "Hopeტექნოლოგიები.net.ge",
+    "domain": "Hopeტექ.net.ge",
     "category": "ტექნოლოგიები",
     "monthlyAmount": "40",
-    "amountDollar": "14.87$"
+    "amountDollar": "14.87$",
+    "class": "technologies"
   },
   {
     "id": 6,
     "domain": "Amirთამაშები.edu.ge",
     "category": "თამაშები",
     "monthlyAmount": "30",
-    "amountDollar": "11.15$"
+    "amountDollar": "11.15$",
+    "class": "games"
   },
   {
     "id": 7,
     "domain": "Eveგართობა-და-დასვენება.school.ge",
     "category": "გართობა და დასვენება",
     "monthlyAmount": "60",
-    "amountDollar": "22.31$"
+    "amountDollar": "22.31$",
+    "class": "entertainment"
   },
   {
     "id": 8,
-    "domain": "Tateმედია.ge.ge",
-    "category": "მედია",
+    "domain": "Tateფინანსები.ge.ge",
+    "category": "ფინანსები",
     "monthlyAmount": "70",
-    "amountDollar": "26$"
+    "amountDollar": "26$",
+    "class": "finances"
   },
   {
     "id": 9,
     "domain": "Jairგანათლება.edu.ge",
     "category": "განათლება",
     "monthlyAmount": "30",
-    "amountDollar": "11.15$"
+    "amountDollar": "11.15$",
+    "class": "education"
   },
   {
     "id": 10,
     "domain": "Islaკომერცია.net.ge",
     "category": "კომერცია",
     "monthlyAmount": "40",
-    "amountDollar": "14.87$"
+    "amountDollar": "14.87$",
+    "class": "commerce"
   },
   {
     "id": 11,
-    "domain": "Koaფინანსები.school.ge",
-    "category": "ფინანსები",
+    "domain": "Koaმედია.school.ge",
+    "category": "მედია",
     "monthlyAmount": "60",
-    "amountDollar": "22.31$"
+    "amountDollar": "22.31$",
+    "class": "media"
   },
   {
     "id": 12,
     "domain": "Liaბიზნესი.com.ge",
     "category": "ბიზნესი",
     "monthlyAmount": "80",
-    "amountDollar": "29.75$"
+    "amountDollar": "29.75$",
+    "class": "buisness"
   }
 ]

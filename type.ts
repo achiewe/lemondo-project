@@ -4,4 +4,5 @@ export interface Info {
   category: string;
   monthlyAmount: string;
   amountDollar: string;
+  class: string;
 }
