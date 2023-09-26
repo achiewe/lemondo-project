@@ -135,11 +135,13 @@ const Filter = (): JSX.Element => {
       const itemSymbols = item.domain.length; // Calculate the number of characters in the domain
 
       // Check if item.domain ends with any of the selected endings
-      const endingCheck = selectedEndings.some((ending) =>
+      const endingSee = selectedEndings.some((ending) =>
         item.domain.endsWith(ending)
       );
 
-      const categoryCheck = selectedCategories.includes(item.category);
+      const categoryCheck = selectedCategories.some((cat) =>
+        item.class.includes(cat)
+      );
 
       console.log(categoryCheck, "mevar");
 
@@ -150,7 +152,7 @@ const Filter = (): JSX.Element => {
         itemPrice <= maxPrice &&
         itemSymbols >= minSymbols &&
         itemSymbols <= maxSymbols &&
-        endingCheck
+        (categoryCheck || endingSee)
       );
     });
 
