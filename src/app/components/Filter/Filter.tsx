@@ -10,8 +10,6 @@ import { setFilteredData } from "@/features/FilteredInfoSlice";
 import { setErrorMessage } from "@/features/ErrorMessageSlice";
 
 const Filter = (): JSX.Element => {
-  const text = useSelector((store: Rootstate) => store.text.text);
-
   const openFilter = useSelector(
     (store: Rootstate) => store.openFilter.openFilter
   );
