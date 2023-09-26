@@ -128,7 +128,7 @@ const Filter = (): JSX.Element => {
 
     // Filter the 'info' state based on name, price, and symbols range
 
-    const filteredData = info.filter((item) => {
+    const filteredArray = info.filter((item) => {
       const itemPrice = parseFloat(item.monthlyAmount);
       const itemSymbols = item.domain.length; // Calculate the number of characters in the domain
 
@@ -143,13 +143,12 @@ const Filter = (): JSX.Element => {
 
       return (
         item.domain.includes(inputValue) &&
-        endingSee &&
         !isNaN(itemPrice) && // Check if item.price is a valid number
         itemPrice >= minPrice &&
         itemPrice <= maxPrice &&
         itemSymbols >= minSymbols &&
         itemSymbols <= maxSymbols &&
-        categoryCheck
+        (categoryCheck || endingSee)
       );
     });
 
@@ -160,7 +159,7 @@ const Filter = (): JSX.Element => {
     }
 
     // Dispatch an action to update the 'filteredData' state
-    dispatch(setFilteredData(filteredData));
+    dispatch(setFilteredData(filteredArray));
   };
 
   return (
