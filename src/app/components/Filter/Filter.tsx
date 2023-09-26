@@ -129,7 +129,7 @@ const Filter = (): JSX.Element => {
     }
 
     // Filter the 'info' state based on name, price, and symbols range
-    console.log("Selected Categories: ", selectedCategories);
+
     const filteredData = info.filter((item) => {
       const itemPrice = parseFloat(item.monthlyAmount);
       const itemSymbols = item.domain.length; // Calculate the number of characters in the domain
@@ -142,8 +142,6 @@ const Filter = (): JSX.Element => {
       const categoryCheck = selectedCategories.some((cat) =>
         item.class.includes(cat)
       );
-
-      console.log(categoryCheck, "mevar");
 
       return (
         item.domain.includes(inputValue) &&
