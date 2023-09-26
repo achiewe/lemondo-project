@@ -18,49 +18,12 @@ import React from "react";
 
 export default function Home() {
   const [shouldShowFilter, setShouldShowFilter] = useState(true);
-  const [openSort, setOpenSort] = useState(false);
   const openFilter = useSelector(
     (store: Rootstate) => store.openFilter.openFilter
   );
   const dispatch = useDispatch();
-
-  function handleResize() {
-    if (typeof window !== "undefined") {
-      if (window.innerWidth >= 1024) {
-        setOpenSort(true);
-      } else {
-        setOpenSort(false);
-      }
-    }
-  }
-
   useEffect(() => {
-    // Your existing logic to dispatch data
     dispatch(setInfo(data));
-
-    // Your custom logic here
-    // For example, fetch some data using axios
-    axios
-      .get("/api/someEndpoint")
-      .then((response) => {
-        // Handle the response data here
-        console.log(response.data);
-      })
-      .catch((error) => {
-        // Handle errors here
-        console.error(error);
-      });
-
-    // Initial check for window resizing
-    handleResize();
-
-    // Add the event listener for window resizing
-    window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, []);
 
   return (
@@ -70,7 +33,7 @@ export default function Home() {
       <NavbarDesk />
       <Advertisment />
       <Sorting />
-      {shouldShowFilter && <Filter />}
+      {openFilter ? <Filter /> : shouldShowFilter}
       <div className={styles.SortingFiltDiv}>
         {openFilter ? shouldShowFilter : <Filter />}
         <SortingInfo />
