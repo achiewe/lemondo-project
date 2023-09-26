@@ -37,11 +37,17 @@ const Header = (): JSX.Element => {
             className={styles.siteMobSvg}
             src={siteSvg}
             alt="site url img"
+            onClick={() => {
+              document.location.reload();
+            }}
           />
           <Image
             className={styles.symbolSvg}
             src={symbolDeskSvg}
             alt="site url image"
+            onClick={() => {
+              document.location.reload();
+            }}
           />
         </div>
         <div className={styles.userActions}>

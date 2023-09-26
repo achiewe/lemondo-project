@@ -143,12 +143,13 @@ const Filter = (): JSX.Element => {
 
       return (
         item.domain.includes(inputValue) &&
+        endingSee &&
         !isNaN(itemPrice) && // Check if item.price is a valid number
         itemPrice >= minPrice &&
         itemPrice <= maxPrice &&
         itemSymbols >= minSymbols &&
         itemSymbols <= maxSymbols &&
-        (categoryCheck || endingSee)
+        categoryCheck
       );
     });
 
