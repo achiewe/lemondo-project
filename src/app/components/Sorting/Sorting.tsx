@@ -82,11 +82,7 @@ const Sorting = (): JSX.Element => {
         </div>
       </div>
       <div
-        className={styles.sortingDesk}
-        style={{
-          display:
-            window.innerWidth >= 1024 ? "flex" : openSort ? "flex" : "none",
-        }}
+        className={`${styles.sortingDesk} ${openSort ? styles.openSort : ""}`}
       >
         <div className={styles.sortingleftSide}>
           <p className={styles.countDomain}>
