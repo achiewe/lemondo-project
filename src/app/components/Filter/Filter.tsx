@@ -7,6 +7,7 @@ import { setOpenFilter } from "@/features/OpenFilterSlice";
 import FilterCategory from "./filterCategory/FilterCategory";
 import { useState } from "react";
 import { setFilteredData } from "@/features/FilteredInfoSlice";
+import { setErrorMessage } from "@/features/ErrorMessageSlice";
 
 const Filter = (): JSX.Element => {
   const text = useSelector((store: Rootstate) => store.text.text);
@@ -58,6 +59,18 @@ const Filter = (): JSX.Element => {
   );
 
   const [inputValue, setInputValue] = useState<string>("");
+
+  const areAllInputsDefault = () => {
+    return (
+      inputValue === "" &&
+      priceValue === "1" &&
+      secPriceValue === "100" &&
+      secondSymbolValue === "1" &&
+      symbolsValue === "26" &&
+      Object.values(categoryCheckboxes).every((value) => !value) &&
+      Object.values(zoneCheckboxes).every((value) => !value)
+    );
+  };
 
   const handleFormSubmit = (e: any) => {
     e.preventDefault();
@@ -140,6 +153,12 @@ const Filter = (): JSX.Element => {
         endingCheck
       );
     });
+
+    if (areAllInputsDefault()) {
+      dispatch(setErrorMessage(false));
+    } else {
+      dispatch(setErrorMessage(true));
+    }
 
     // Dispatch an action to update the 'filteredData' state
     dispatch(setFilteredData(filteredData));

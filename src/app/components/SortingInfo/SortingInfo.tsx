@@ -22,12 +22,21 @@ const SortingInfo = (): JSX.Element => {
   );
   const dispatch = useDispatch();
 
+  const errorMessage = useSelector(
+    (store: Rootstate) => store.ErrorMessage.ErrorMessage
+  );
+
   const [clickedItems, setClickedItems] = useState<number[]>([]);
   const [clickDiv, setclickDiv] = useState<number | null>(null);
 
   return (
     <div className={styles.ErrorInfoCont}>
-      <div className={styles.infoContainer}>
+      <div
+        className={styles.infoContainer}
+        style={{
+          display: errorMessage && filteredData.length === 0 ? "none" : "flex",
+        }}
+      >
         {(filteredData.length > 0 ? filteredData : info).map((item) => (
           <div
             className={styles.mainInfo}
@@ -105,7 +114,7 @@ const SortingInfo = (): JSX.Element => {
           </div>
         ))}
       </div>
-      <ErrorMessage />
+      {errorMessage && filteredData.length === 0 ? <ErrorMessage /> : ""}
     </div>
   );
 };

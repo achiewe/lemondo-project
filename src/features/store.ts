@@ -6,6 +6,7 @@ import OpenFilterSlice, { FilterProps } from "./OpenFilterSlice";
 import CalculateAddSlice, { calculateProps } from "./CalculateAddSlice";
 import TakeNameSlice, { nameProps } from "./TakeNameSlice";
 import FilteredInfoSlice, { FilteredInfoProps } from "./FilteredInfoSlice";
+import ErrorMessageSlice, { ErrorMessageProps } from "./ErrorMessageSlice";
 
 const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ const store = configureStore({
     calculate: CalculateAddSlice,
     text: TakeNameSlice,
     filtered: FilteredInfoSlice,
+    ErrorMessage: ErrorMessageSlice,
   },
 });
 
@@ -25,6 +27,7 @@ export type Rootstate = {
   calculate: calculateProps;
   text: nameProps;
   filtered: FilteredInfoProps;
+  ErrorMessage: ErrorMessageProps;
 };
 
 export default store;
